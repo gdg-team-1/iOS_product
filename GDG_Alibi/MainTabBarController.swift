@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainTabBarController.swift
 //  GDG_Alibi
 //
 //  Created by chungeunji on 2021/07/05.
@@ -7,13 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        tabBar.tintColor = .green
     }
 
-
 }
-

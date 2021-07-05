@@ -9,34 +9,32 @@
 /* Begin PBXBuildFile section */
 		8CC1FF200AC5664ECB61768C /* Pods_GDG_Alibi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB88BF19C0382508B5A12209 /* Pods_GDG_Alibi.framework */; };
 		B6B6024E269348BE005E5E34 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B6024D269348BE005E5E34 /* Home.storyboard */; };
-		B6B60250269348D7005E5E34 /* Template.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B6024F269348D7005E5E34 /* Template.storyboard */; };
-		B6B6025426934923005E5E34 /* Form.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B6025326934923005E5E34 /* Form.storyboard */; };
-		B6B6025626934935005E5E34 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B6025526934935005E5E34 /* Chat.storyboard */; };
-		B6B6025826934942005E5E34 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B6025726934942005E5E34 /* MyPage.storyboard */; };
 		B6C4623E26933567007E28C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C4623D26933567007E28C8 /* AppDelegate.swift */; };
-		B6C4624026933567007E28C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C4623F26933567007E28C8 /* SceneDelegate.swift */; };
-		B6C4624226933567007E28C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C4624126933567007E28C8 /* ViewController.swift */; };
-		B6C4624526933567007E28C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6C4624326933567007E28C8 /* Main.storyboard */; };
 		B6C4624726933568007E28C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6C4624626933568007E28C8 /* Assets.xcassets */; };
 		B6C4624A26933568007E28C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6C4624826933568007E28C8 /* LaunchScreen.storyboard */; };
+		B6E6185126934DFD005FAC3D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6185026934DFD005FAC3D /* MainTabBarController.swift */; };
+		B6E618532693516B005FAC3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E618522693516B005FAC3D /* Main.storyboard */; };
+		B6E61859269351DA005FAC3D /* Template.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E61858269351DA005FAC3D /* Template.storyboard */; };
+		B6E6185B26935255005FAC3D /* Form.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E6185A26935255005FAC3D /* Form.storyboard */; };
+		B6E6185D2693529A005FAC3D /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E6185C2693529A005FAC3D /* Chat.storyboard */; };
+		B6E6185F269352C8005FAC3D /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E6185E269352C8005FAC3D /* MyPage.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A24FD1B15524829F0F9E31D /* Pods-GDG_Alibi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDG_Alibi.release.xcconfig"; path = "Target Support Files/Pods-GDG_Alibi/Pods-GDG_Alibi.release.xcconfig"; sourceTree = "<group>"; };
 		75106E448921931102A6D361 /* Pods-GDG_Alibi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDG_Alibi.debug.xcconfig"; path = "Target Support Files/Pods-GDG_Alibi/Pods-GDG_Alibi.debug.xcconfig"; sourceTree = "<group>"; };
 		B6B6024D269348BE005E5E34 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		B6B6024F269348D7005E5E34 /* Template.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Template.storyboard; sourceTree = "<group>"; };
-		B6B6025326934923005E5E34 /* Form.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Form.storyboard; sourceTree = "<group>"; };
-		B6B6025526934935005E5E34 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
-		B6B6025726934942005E5E34 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		B6C4623A26933567007E28C8 /* GDG_Alibi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDG_Alibi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6C4623D26933567007E28C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B6C4623F26933567007E28C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B6C4624126933567007E28C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B6C4624426933567007E28C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B6C4624626933568007E28C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6C4624926933568007E28C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6C4624B26933568007E28C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6E6185026934DFD005FAC3D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		B6E618522693516B005FAC3D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B6E61858269351DA005FAC3D /* Template.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Template.storyboard; sourceTree = "<group>"; };
+		B6E6185A26935255005FAC3D /* Form.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Form.storyboard; sourceTree = "<group>"; };
+		B6E6185C2693529A005FAC3D /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		B6E6185E269352C8005FAC3D /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		EB88BF19C0382508B5A12209 /* Pods_GDG_Alibi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GDG_Alibi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -72,7 +70,6 @@
 		B6B6024526934782005E5E34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B6C4623F26933567007E28C8 /* SceneDelegate.swift */,
 				B6C4624826933568007E28C8 /* LaunchScreen.storyboard */,
 				B6C4624B26933568007E28C8 /* Info.plist */,
 			);
@@ -94,38 +91,6 @@
 			);
 			name = "홈";
 			path = "홈";
-			sourceTree = "<group>";
-		};
-		B6B6024926934881005E5E34 /* 템플릿 */ = {
-			isa = PBXGroup;
-			children = (
-				B6B6024F269348D7005E5E34 /* Template.storyboard */,
-			);
-			name = "템플릿";
-			sourceTree = "<group>";
-		};
-		B6B6024A2693488A005E5E34 /* 요청 */ = {
-			isa = PBXGroup;
-			children = (
-				B6B6025326934923005E5E34 /* Form.storyboard */,
-			);
-			name = "요청";
-			sourceTree = "<group>";
-		};
-		B6B6024B2693489A005E5E34 /* 채팅 */ = {
-			isa = PBXGroup;
-			children = (
-				B6B6025526934935005E5E34 /* Chat.storyboard */,
-			);
-			name = "채팅";
-			sourceTree = "<group>";
-		};
-		B6B6024C269348A2005E5E34 /* 마이 */ = {
-			isa = PBXGroup;
-			children = (
-				B6B6025726934942005E5E34 /* MyPage.storyboard */,
-			);
-			name = "마이";
 			sourceTree = "<group>";
 		};
 		B6C4623126933567007E28C8 = {
@@ -150,17 +115,61 @@
 			isa = PBXGroup;
 			children = (
 				B6C4623D26933567007E28C8 /* AppDelegate.swift */,
-				B6C4624126933567007E28C8 /* ViewController.swift */,
-				B6C4624326933567007E28C8 /* Main.storyboard */,
-				B6B602482693486A005E5E34 /* 홈 */,
-				B6B6024926934881005E5E34 /* 템플릿 */,
-				B6B6024A2693488A005E5E34 /* 요청 */,
-				B6B6024B2693489A005E5E34 /* 채팅 */,
-				B6B6024C269348A2005E5E34 /* 마이 */,
+				B6E6185026934DFD005FAC3D /* MainTabBarController.swift */,
+				B6E618522693516B005FAC3D /* Main.storyboard */,
+				B6E6184F26934D97005FAC3D /* User Interface */,
 				B6B602472693479B005E5E34 /* Resource */,
 				B6B6024526934782005E5E34 /* Supporting Files */,
 			);
 			path = GDG_Alibi;
+			sourceTree = "<group>";
+		};
+		B6E6184F26934D97005FAC3D /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				B6B602482693486A005E5E34 /* 홈 */,
+				B6E61854269351AD005FAC3D /* 템플릿 */,
+				B6E61855269351BA005FAC3D /* 요청 */,
+				B6E61856269351BF005FAC3D /* 채팅 */,
+				B6E61857269351C5005FAC3D /* 마이 */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		B6E61854269351AD005FAC3D /* 템플릿 */ = {
+			isa = PBXGroup;
+			children = (
+				B6E61858269351DA005FAC3D /* Template.storyboard */,
+			);
+			name = "템플릿";
+			path = "템플릿";
+			sourceTree = "<group>";
+		};
+		B6E61855269351BA005FAC3D /* 요청 */ = {
+			isa = PBXGroup;
+			children = (
+				B6E6185A26935255005FAC3D /* Form.storyboard */,
+			);
+			name = "요청";
+			path = "요청";
+			sourceTree = "<group>";
+		};
+		B6E61856269351BF005FAC3D /* 채팅 */ = {
+			isa = PBXGroup;
+			children = (
+				B6E6185C2693529A005FAC3D /* Chat.storyboard */,
+			);
+			name = "채팅";
+			path = "채팅";
+			sourceTree = "<group>";
+		};
+		B6E61857269351C5005FAC3D /* 마이 */ = {
+			isa = PBXGroup;
+			children = (
+				B6E6185E269352C8005FAC3D /* MyPage.storyboard */,
+			);
+			name = "마이";
+			path = "마이";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,14 +230,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6B6025626934935005E5E34 /* Chat.storyboard in Resources */,
+				B6E6185D2693529A005FAC3D /* Chat.storyboard in Resources */,
 				B6C4624A26933568007E28C8 /* LaunchScreen.storyboard in Resources */,
 				B6C4624726933568007E28C8 /* Assets.xcassets in Resources */,
-				B6B6025826934942005E5E34 /* MyPage.storyboard in Resources */,
-				B6B60250269348D7005E5E34 /* Template.storyboard in Resources */,
-				B6C4624526933567007E28C8 /* Main.storyboard in Resources */,
-				B6B6025426934923005E5E34 /* Form.storyboard in Resources */,
+				B6E6185F269352C8005FAC3D /* MyPage.storyboard in Resources */,
+				B6E61859269351DA005FAC3D /* Template.storyboard in Resources */,
 				B6B6024E269348BE005E5E34 /* Home.storyboard in Resources */,
+				B6E6185B26935255005FAC3D /* Form.storyboard in Resources */,
+				B6E618532693516B005FAC3D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,23 +273,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6C4624226933567007E28C8 /* ViewController.swift in Sources */,
+				B6E6185126934DFD005FAC3D /* MainTabBarController.swift in Sources */,
 				B6C4623E26933567007E28C8 /* AppDelegate.swift in Sources */,
-				B6C4624026933567007E28C8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B6C4624326933567007E28C8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B6C4624426933567007E28C8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B6C4624826933568007E28C8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -415,16 +415,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 88356WAKJ6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GDG_Alibi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-.GDG-Alibi";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alibi.GDG-Alibi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -435,16 +436,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 88356WAKJ6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GDG_Alibi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-.GDG-Alibi";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alibi.GDG-Alibi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
