@@ -18,6 +18,9 @@
 		B6E6185B26935255005FAC3D /* Form.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E6185A26935255005FAC3D /* Form.storyboard */; };
 		B6E6185D2693529A005FAC3D /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E6185C2693529A005FAC3D /* Chat.storyboard */; };
 		B6E6185F269352C8005FAC3D /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E6185E269352C8005FAC3D /* MyPage.storyboard */; };
+		B6E61862269354A7005FAC3D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E61861269354A7005FAC3D /* HomeViewController.swift */; };
+		B6E61864269354C2005FAC3D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E61863269354C2005FAC3D /* HomeViewModel.swift */; };
+		B6E61866269354F2005FAC3D /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E61865269354F2005FAC3D /* HomeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		B6E6185A26935255005FAC3D /* Form.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Form.storyboard; sourceTree = "<group>"; };
 		B6E6185C2693529A005FAC3D /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		B6E6185E269352C8005FAC3D /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		B6E61861269354A7005FAC3D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B6E61863269354C2005FAC3D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B6E61865269354F2005FAC3D /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		EB88BF19C0382508B5A12209 /* Pods_GDG_Alibi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GDG_Alibi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -88,6 +94,9 @@
 			isa = PBXGroup;
 			children = (
 				B6B6024D269348BE005E5E34 /* Home.storyboard */,
+				B6E61861269354A7005FAC3D /* HomeViewController.swift */,
+				B6E61863269354C2005FAC3D /* HomeViewModel.swift */,
+				B6E61865269354F2005FAC3D /* HomeModel.swift */,
 			);
 			name = "홈";
 			path = "홈";
@@ -115,25 +124,11 @@
 			isa = PBXGroup;
 			children = (
 				B6C4623D26933567007E28C8 /* AppDelegate.swift */,
-				B6E6185026934DFD005FAC3D /* MainTabBarController.swift */,
-				B6E618522693516B005FAC3D /* Main.storyboard */,
-				B6E6184F26934D97005FAC3D /* User Interface */,
+				B6E618602693546F005FAC3D /* UserInterface */,
 				B6B602472693479B005E5E34 /* Resource */,
 				B6B6024526934782005E5E34 /* Supporting Files */,
 			);
 			path = GDG_Alibi;
-			sourceTree = "<group>";
-		};
-		B6E6184F26934D97005FAC3D /* User Interface */ = {
-			isa = PBXGroup;
-			children = (
-				B6B602482693486A005E5E34 /* 홈 */,
-				B6E61854269351AD005FAC3D /* 템플릿 */,
-				B6E61855269351BA005FAC3D /* 요청 */,
-				B6E61856269351BF005FAC3D /* 채팅 */,
-				B6E61857269351C5005FAC3D /* 마이 */,
-			);
-			name = "User Interface";
 			sourceTree = "<group>";
 		};
 		B6E61854269351AD005FAC3D /* 템플릿 */ = {
@@ -170,6 +165,20 @@
 			);
 			name = "마이";
 			path = "마이";
+			sourceTree = "<group>";
+		};
+		B6E618602693546F005FAC3D /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				B6E618522693516B005FAC3D /* Main.storyboard */,
+				B6E6185026934DFD005FAC3D /* MainTabBarController.swift */,
+				B6B602482693486A005E5E34 /* 홈 */,
+				B6E61854269351AD005FAC3D /* 템플릿 */,
+				B6E61855269351BA005FAC3D /* 요청 */,
+				B6E61856269351BF005FAC3D /* 채팅 */,
+				B6E61857269351C5005FAC3D /* 마이 */,
+			);
+			path = UserInterface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +284,9 @@
 			files = (
 				B6E6185126934DFD005FAC3D /* MainTabBarController.swift in Sources */,
 				B6C4623E26933567007E28C8 /* AppDelegate.swift in Sources */,
+				B6E61862269354A7005FAC3D /* HomeViewController.swift in Sources */,
+				B6E61866269354F2005FAC3D /* HomeModel.swift in Sources */,
+				B6E61864269354C2005FAC3D /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +427,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 88356WAKJ6;
 				INFOPLIST_FILE = GDG_Alibi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -436,7 +448,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 88356WAKJ6;
 				INFOPLIST_FILE = GDG_Alibi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
