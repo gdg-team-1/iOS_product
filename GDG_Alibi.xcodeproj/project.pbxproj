@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F10B34C2695DE9A00E7006B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F10B34B2695DE9A00E7006B /* GoogleService-Info.plist */; };
+		4F10B34E2695E0A800E7006B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F10B34D2695E0A800E7006B /* ChatViewController.swift */; };
+		4F10B3502695E0B600E7006B /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F10B34F2695E0B600E7006B /* ChatListViewController.swift */; };
+		4F10B3522695E34C00E7006B /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F10B3512695E34C00E7006B /* ChatListTableViewCell.swift */; };
+		4F10B3542695E86B00E7006B /* ChatListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F10B3532695E86B00E7006B /* ChatListModel.swift */; };
+		4F10B3562695EB5F00E7006B /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F10B3552695EB5F00E7006B /* ChatListViewModel.swift */; };
+		4F10B3582695FA7E00E7006B /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F10B3572695FA7E00E7006B /* ChatViewModel.swift */; };
+		4F10B35A2695FA9500E7006B /* ChatMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F10B3592695FA9500E7006B /* ChatMessageModel.swift */; };
 		8CC1FF200AC5664ECB61768C /* Pods_GDG_Alibi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB88BF19C0382508B5A12209 /* Pods_GDG_Alibi.framework */; };
 		B685B93E2695681600CC11FE /* NetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B93D2695681600CC11FE /* NetworkAdapter.swift */; };
 		B685B9402695688300CC11FE /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B93F2695688300CC11FE /* APIService.swift */; };
@@ -29,6 +37,14 @@
 
 /* Begin PBXFileReference section */
 		0A24FD1B15524829F0F9E31D /* Pods-GDG_Alibi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDG_Alibi.release.xcconfig"; path = "Target Support Files/Pods-GDG_Alibi/Pods-GDG_Alibi.release.xcconfig"; sourceTree = "<group>"; };
+		4F10B34B2695DE9A00E7006B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4F10B34D2695E0A800E7006B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		4F10B34F2695E0B600E7006B /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		4F10B3512695E34C00E7006B /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
+		4F10B3532695E86B00E7006B /* ChatListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListModel.swift; sourceTree = "<group>"; };
+		4F10B3552695EB5F00E7006B /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
+		4F10B3572695FA7E00E7006B /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		4F10B3592695FA9500E7006B /* ChatMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageModel.swift; sourceTree = "<group>"; };
 		75106E448921931102A6D361 /* Pods-GDG_Alibi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDG_Alibi.debug.xcconfig"; path = "Target Support Files/Pods-GDG_Alibi/Pods-GDG_Alibi.debug.xcconfig"; sourceTree = "<group>"; };
 		B685B93D2695681600CC11FE /* NetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAdapter.swift; sourceTree = "<group>"; };
 		B685B93F2695688300CC11FE /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -93,6 +109,7 @@
 		B6B6024526934782005E5E34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4F10B34B2695DE9A00E7006B /* GoogleService-Info.plist */,
 				B6C4624826933568007E28C8 /* LaunchScreen.storyboard */,
 				B6C4624B26933568007E28C8 /* Info.plist */,
 			);
@@ -172,6 +189,13 @@
 			isa = PBXGroup;
 			children = (
 				B6E6185C2693529A005FAC3D /* Chat.storyboard */,
+				4F10B34F2695E0B600E7006B /* ChatListViewController.swift */,
+				4F10B3552695EB5F00E7006B /* ChatListViewModel.swift */,
+				4F10B3512695E34C00E7006B /* ChatListTableViewCell.swift */,
+				4F10B3532695E86B00E7006B /* ChatListModel.swift */,
+				4F10B34D2695E0A800E7006B /* ChatViewController.swift */,
+				4F10B3572695FA7E00E7006B /* ChatViewModel.swift */,
+				4F10B3592695FA9500E7006B /* ChatMessageModel.swift */,
 			);
 			name = "채팅";
 			path = "채팅";
@@ -262,6 +286,7 @@
 			files = (
 				B6E6185D2693529A005FAC3D /* Chat.storyboard in Resources */,
 				B6C4624A26933568007E28C8 /* LaunchScreen.storyboard in Resources */,
+				4F10B34C2695DE9A00E7006B /* GoogleService-Info.plist in Resources */,
 				B6C4624726933568007E28C8 /* Assets.xcassets in Resources */,
 				B6E6185F269352C8005FAC3D /* MyPage.storyboard in Resources */,
 				B6E61859269351DA005FAC3D /* Template.storyboard in Resources */,
@@ -321,13 +346,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				B685B93E2695681600CC11FE /* NetworkAdapter.swift in Sources */,
+				4F10B3542695E86B00E7006B /* ChatListModel.swift in Sources */,
 				B685B9402695688300CC11FE /* APIService.swift in Sources */,
 				B6E6185126934DFD005FAC3D /* MainTabBarController.swift in Sources */,
+				4F10B3562695EB5F00E7006B /* ChatListViewModel.swift in Sources */,
 				B6C4623E26933567007E28C8 /* AppDelegate.swift in Sources */,
+				4F10B3502695E0B600E7006B /* ChatListViewController.swift in Sources */,
+				4F10B35A2695FA9500E7006B /* ChatMessageModel.swift in Sources */,
 				B6E61862269354A7005FAC3D /* HomeViewController.swift in Sources */,
 				B6E61866269354F2005FAC3D /* HomeModel.swift in Sources */,
 				B6E61864269354C2005FAC3D /* HomeViewModel.swift in Sources */,
 				B685B94426956CAE00CC11FE /* UserModel.swift in Sources */,
+				4F10B3522695E34C00E7006B /* ChatListTableViewCell.swift in Sources */,
+				4F10B34E2695E0A800E7006B /* ChatViewController.swift in Sources */,
+				4F10B3582695FA7E00E7006B /* ChatViewModel.swift in Sources */,
 				B685B94226956ADB00CC11FE /* FormModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
