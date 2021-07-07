@@ -6,5 +6,6 @@ target 'GDG_Alibi' do
   use_frameworks!
 
   # Pods for GDG_Alibi
+  pod 'JTAppleCalendar', '~> 8.0.3'
 
 end

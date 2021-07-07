@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,7 @@
 		B6E61862269354A7005FAC3D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E61861269354A7005FAC3D /* HomeViewController.swift */; };
 		B6E61864269354C2005FAC3D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E61863269354C2005FAC3D /* HomeViewModel.swift */; };
 		B6E61866269354F2005FAC3D /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E61865269354F2005FAC3D /* HomeModel.swift */; };
+		B6E618692693586A005FAC3D /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E618682693586A005FAC3D /* DateCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		B6E61861269354A7005FAC3D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B6E61863269354C2005FAC3D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B6E61865269354F2005FAC3D /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		B6E618682693586A005FAC3D /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		EB88BF19C0382508B5A12209 /* Pods_GDG_Alibi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GDG_Alibi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -97,6 +99,7 @@
 				B6E61861269354A7005FAC3D /* HomeViewController.swift */,
 				B6E61863269354C2005FAC3D /* HomeViewModel.swift */,
 				B6E61865269354F2005FAC3D /* HomeModel.swift */,
+				B6E618672693583A005FAC3D /* CollectionViewCell */,
 			);
 			name = "홈";
 			path = "홈";
@@ -181,6 +184,14 @@
 			path = UserInterface;
 			sourceTree = "<group>";
 		};
+		B6E618672693583A005FAC3D /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B6E618682693586A005FAC3D /* DateCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -192,6 +203,7 @@
 				B6C4623626933567007E28C8 /* Sources */,
 				B6C4623726933567007E28C8 /* Frameworks */,
 				B6C4623826933567007E28C8 /* Resources */,
+				BCBADF4C90C2DAD531BAD8FD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -275,6 +287,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BCBADF4C90C2DAD531BAD8FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GDG_Alibi/Pods-GDG_Alibi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GDG_Alibi/Pods-GDG_Alibi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GDG_Alibi/Pods-GDG_Alibi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -286,6 +315,7 @@
 				B6C4623E26933567007E28C8 /* AppDelegate.swift in Sources */,
 				B6E61862269354A7005FAC3D /* HomeViewController.swift in Sources */,
 				B6E61866269354F2005FAC3D /* HomeModel.swift in Sources */,
+				B6E618692693586A005FAC3D /* DateCollectionViewCell.swift in Sources */,
 				B6E61864269354C2005FAC3D /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
