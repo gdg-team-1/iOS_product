@@ -13,5 +13,6 @@ target 'GDG_Alibi' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
+  pod 'JTAppleCalendar', '~> 8.0.3'
 
 end

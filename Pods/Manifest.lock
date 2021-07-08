@@ -348,6 +348,7 @@ PODS:
     - gRPC-Core/Interface (= 1.28.2)
   - gRPC-Core/Interface (1.28.2)
   - GTMSessionFetcher/Core (1.6.1)
+  - JTAppleCalendar (8.0.3)
   - leveldb-library (1.22.1)
   - Moya (15.0.0-alpha.1):
     - Moya/Core (= 15.0.0-alpha.1)
@@ -366,6 +367,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Firestore
   - Firebase/Storage
+  - JTAppleCalendar (~> 8.0.3)
   - Moya (~> 15.0.0-alpha.1)
 
 SPEC REPOS:
@@ -387,6 +389,7 @@ SPEC REPOS:
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
+    - JTAppleCalendar
     - leveldb-library
     - Moya
     - nanopb
@@ -410,11 +413,12 @@ SPEC CHECKSUMS:
   "gRPC-C++": 13d8ccef97d5c3c441b7e3c529ef28ebee86fad2
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   GTMSessionFetcher: 36689134877faeb055b27dfa4ccc9ceaa42e029e
+  JTAppleCalendar: 932cadea40b1051beab10f67843451d48ba16c99
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   Moya: 101c94dfb29289736ecd20fa6e82bea665e0671b
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: 9f6f1cd7016bfeb4f0f7723f67bc883795042c8e
+PODFILE CHECKSUM: d6832fc37442b6036ec3ac1098fe7a558ad27f2b
 
 COCOAPODS: 1.10.0

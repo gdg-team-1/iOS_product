@@ -1,6 +1,9 @@
 
 # Created by https://www.toptal.com/developers/gitignore/api/swift,xcode,git
 # Edit at https://www.toptal.com/developers/gitignore?templates=swift,xcode,git
+# Pods - for those of you who use CocoaPods
+Pods
+Podfile.lock
 
 ### Git ###
 # Created by git for backups. To disable backups in Git:
