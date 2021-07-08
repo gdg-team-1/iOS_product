@@ -7,17 +7,12 @@
 
 import UIKit
 
-class RequestTableViewCell: UITableViewCell {
+final class RequestTableViewCell: UITableViewCell {
+
+    static let id = "RequestTableViewCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }
