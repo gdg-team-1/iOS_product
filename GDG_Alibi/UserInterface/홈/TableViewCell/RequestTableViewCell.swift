@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class RequestTableViewCell: UITableViewCell {
 
@@ -21,6 +22,7 @@ final class RequestTableViewCell: UITableViewCell {
 
     var model: RequestInfo? {
         didSet {
+            profileImageview.image = model?.profile
             categoryLabel.text = model?.category
             usernameLabel.text = model?.username
             timeLabel.text = model?.dueDate

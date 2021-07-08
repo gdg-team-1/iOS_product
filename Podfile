@@ -7,6 +7,7 @@ target 'GDG_Alibi' do
 
   # Pods for GDG_Alibi
   pod 'Moya', '~> 15.0.0-alpha.1'
+  pod 'SDWebImage', '~> 5.11.1'
 
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'

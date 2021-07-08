@@ -360,6 +360,9 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (1.2.12)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
 
 DEPENDENCIES:
   - Firebase/Analytics
@@ -369,6 +372,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - JTAppleCalendar (~> 8.0.3)
   - Moya (~> 15.0.0-alpha.1)
+  - SDWebImage (~> 5.11.1)
 
 SPEC REPOS:
   trunk:
@@ -394,6 +398,7 @@ SPEC REPOS:
     - Moya
     - nanopb
     - PromisesObjC
+    - SDWebImage
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -418,7 +423,8 @@ SPEC CHECKSUMS:
   Moya: 101c94dfb29289736ecd20fa6e82bea665e0671b
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
 
-PODFILE CHECKSUM: d6832fc37442b6036ec3ac1098fe7a558ad27f2b
+PODFILE CHECKSUM: 5c0199cc073541a069f0ba16dc81b320a915f7c9
 
 COCOAPODS: 1.10.0
