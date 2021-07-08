@@ -28,7 +28,7 @@
         <scene sceneID="OXa-kF-Mw6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CTf-MK-tOE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="템플릿" image="tray.full" catalog="system" id="yJ9-I9-DOb"/>
+                    <tabBarItem key="tabBarItem" title="템플릿" image="shape" id="yJ9-I9-DOb"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wMU-aU-huA">
@@ -46,7 +46,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tray.full" catalog="system" width="128" height="88"/>
+        <image name="shape" width="18" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

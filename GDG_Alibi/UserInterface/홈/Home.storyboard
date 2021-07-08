@@ -3,22 +3,110 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--홈-->
+        <!--Home View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="HomeViewController" customModule="GDG_Alibi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wL3-8Q-cVC">
+                                <rect key="frame" x="0.0" y="439" width="414" height="8"/>
+                                <color key="backgroundColor" name="245"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="twu-9O-cb4"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xAm-BT-4qP">
+                                <rect key="frame" x="0.0" y="447" width="414" height="366"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="Y6V-1U-pNF"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="gIR-au-cD9"/>
+                                </connections>
+                            </tableView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pC5-cT-eug" customClass="JTACMonthView" customModule="JTAppleCalendar">
+                                <rect key="frame" x="0.0" y="88" width="414" height="351"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="351" id="2C9-IW-Lfi"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Xw5-UQ-0Yk">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DateCollectionViewCell" id="Qxw-ca-gXk" customClass="DateCollectionViewCell" customModule="GDG_Alibi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="p7v-1Z-tbW">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57s-vZ-ViZ">
+                                                    <rect key="frame" x="48" y="48" width="32" height="32"/>
+                                                    <color key="backgroundColor" name="44199129"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="32" id="KeU-qk-iWG"/>
+                                                        <constraint firstAttribute="height" constant="32" id="R2Y-Ra-ldd"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMS-50-ByQ">
+                                                    <rect key="frame" x="49.5" y="57" width="29" height="14.5"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="12"/>
+                                                    <color key="textColor" name="395972"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="57s-vZ-ViZ" firstAttribute="centerY" secondItem="LMS-50-ByQ" secondAttribute="centerY" id="1ay-o6-z9A"/>
+                                                <constraint firstItem="LMS-50-ByQ" firstAttribute="centerX" secondItem="p7v-1Z-tbW" secondAttribute="centerX" id="GQF-6z-tfm"/>
+                                                <constraint firstItem="LMS-50-ByQ" firstAttribute="centerY" secondItem="p7v-1Z-tbW" secondAttribute="centerY" id="Jen-am-Ywh"/>
+                                                <constraint firstItem="57s-vZ-ViZ" firstAttribute="centerX" secondItem="LMS-50-ByQ" secondAttribute="centerX" id="LN8-hb-4Jl"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="LMS-50-ByQ" id="sck-11-Y90"/>
+                                            <outlet property="selectView" destination="57s-vZ-ViZ" id="Gt8-xo-e39"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="ibCalendarDataSource" destination="Y6W-OH-hqX" id="syI-0b-peD"/>
+                                    <outlet property="ibCalendarDelegate" destination="Y6W-OH-hqX" id="c7S-9h-hKf"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wL3-8Q-cVC" firstAttribute="top" secondItem="pC5-cT-eug" secondAttribute="bottom" id="0dH-vU-4eb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xAm-BT-4qP" secondAttribute="trailing" id="1KG-gH-4yK"/>
+                            <constraint firstItem="wL3-8Q-cVC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="3CK-GT-KFM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wL3-8Q-cVC" secondAttribute="trailing" id="5lB-DB-AyU"/>
+                            <constraint firstItem="pC5-cT-eug" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="7Cs-cz-673"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="xAm-BT-4qP" secondAttribute="bottom" id="Hov-JW-R1I"/>
+                            <constraint firstItem="pC5-cT-eug" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Rny-En-bXz"/>
+                            <constraint firstItem="xAm-BT-4qP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="UFb-cU-ZBf"/>
+                            <constraint firstItem="xAm-BT-4qP" firstAttribute="top" secondItem="wL3-8Q-cVC" secondAttribute="bottom" id="m0P-mZ-D0U"/>
+                            <constraint firstItem="pC5-cT-eug" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="sQj-M5-pG6"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="홈" id="TJQ-ye-fSN"/>
+                    <navigationItem key="navigationItem" id="TJQ-ye-fSN"/>
+                    <connections>
+                        <outlet property="monthView" destination="pC5-cT-eug" id="KqB-K2-ceM"/>
+                        <outlet property="tableView" destination="xAm-BT-4qP" id="vB4-V6-gYg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -28,12 +116,13 @@
         <scene sceneID="3dI-qp-gC3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j36-Vw-uVy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" id="Bup-8S-jj5"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="bxHome" id="Bup-8S-jj5"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OKp-AA-dX1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemBackgroundColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -46,7 +135,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="bxHome" width="20" height="20"/>
+        <namedColor name="245">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="395972">
+            <color red="0.15294117647058825" green="0.23137254901960785" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="44199129">
+            <color red="0.17254901960784313" green="0.7803921568627451" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
