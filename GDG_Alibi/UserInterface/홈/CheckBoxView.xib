@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckBoxView" customModule="GDG_Alibi" customModuleProvider="target">
+            <connections>
+                <outlet property="checkImageView" destination="mXJ-MK-2Td" id="L0g-uq-say"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="126" height="141"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icNoneCheckBox" translatesAutoresizingMaskIntoConstraints="NO" id="mXJ-MK-2Td">
+                    <rect key="frame" x="0.0" y="80.5" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="hwV-mP-om8"/>
+                        <constraint firstAttribute="height" constant="24" id="tOY-ej-dd7"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 요청" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLb-gx-krF">
+                    <rect key="frame" x="32" y="82.5" width="94" height="20"/>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
+                    <color key="textColor" name="395972"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSe-5E-Byi">
+                    <rect key="frame" x="0.0" y="0.0" width="126" height="141"/>
+                    <connections>
+                        <action selector="touchArea:" destination="-1" eventType="touchUpInside" id="GXR-9Z-mNO"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="mXJ-MK-2Td" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="2pK-B2-rYo"/>
+                <constraint firstItem="dSe-5E-Byi" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="4mR-Il-at5"/>
+                <constraint firstItem="dSe-5E-Byi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="98p-Hx-zhs"/>
+                <constraint firstItem="mXJ-MK-2Td" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="GAd-gt-poB"/>
+                <constraint firstItem="dSe-5E-Byi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KiL-42-d1v"/>
+                <constraint firstItem="tLb-gx-krF" firstAttribute="leading" secondItem="mXJ-MK-2Td" secondAttribute="trailing" constant="8" id="TV6-ap-nMy"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tLb-gx-krF" secondAttribute="trailing" id="Ulr-Rr-FFZ"/>
+                <constraint firstAttribute="trailing" secondItem="dSe-5E-Byi" secondAttribute="trailing" id="qNT-Ot-AGf"/>
+                <constraint firstItem="tLb-gx-krF" firstAttribute="centerY" secondItem="mXJ-MK-2Td" secondAttribute="centerY" id="vGh-T2-ozd"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-71.014492753623188" y="378.01339285714283"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icNoneCheckBox" width="24" height="24"/>
+        <namedColor name="395972">
+            <color red="0.15294117647058825" green="0.23137254901960785" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

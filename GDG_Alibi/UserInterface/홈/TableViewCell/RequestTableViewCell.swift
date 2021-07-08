@@ -19,6 +19,14 @@ final class RequestTableViewCell: UITableViewCell {
 
     var touchButton: (() -> Void)?
 
+    var model: RequestInfo? {
+        didSet {
+            categoryLabel.text = model?.category
+            usernameLabel.text = model?.username
+            timeLabel.text = model?.dueDate
+        }
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
