@@ -28,7 +28,7 @@
         <scene sceneID="Xii-uw-cmi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V8J-fY-HdF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="마이" image="person" catalog="system" id="Hna-Yl-roz"/>
+                    <tabBarItem key="tabBarItem" title="마이" image="bxUser" id="Hna-Yl-roz"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zAh-Py-hcm">
@@ -46,7 +46,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="bxUser" width="18" height="19"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

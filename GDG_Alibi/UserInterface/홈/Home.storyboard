@@ -216,7 +216,7 @@
         <scene sceneID="3dI-qp-gC3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j36-Vw-uVy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" id="Bup-8S-jj5"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="bxHome" id="Bup-8S-jj5"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OKp-AA-dX1">
@@ -234,7 +234,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="bxHome" width="20" height="20"/>
         <image name="icChevronLeft" width="8" height="12"/>
         <image name="icChevronRight" width="8" height="12"/>
         <namedColor name="170170170">

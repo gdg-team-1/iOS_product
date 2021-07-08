@@ -25,13 +25,17 @@ class HomeViewController: UIViewController {
     }
 
     private func initView() {
-        
+        let calendar = Calendar.current
+        let month = calendar.component(.month, from: Date())
+        monthLabel.text = "\(month)월"
+
+        tableView.estimatedRowHeight = 105
+        tableView.register(UINib(nibName: RequestTableViewCell.id, bundle: nil), forCellReuseIdentifier: RequestTableViewCell.id)
     }
 
     @IBAction func moveMonth(_ sender: UIButton) {
 
     }
-
 }
 
 extension HomeViewController: JTACMonthViewDataSource {
@@ -68,10 +72,13 @@ extension HomeViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RequestTableViewCell.id, for: indexPath) as? RequestTableViewCell else { return UITableViewCell() }
+        cell.touchButton = {
+
+        }
+        return cell
     }
 }
-
 
 extension HomeViewController: UITableViewDelegate {
 

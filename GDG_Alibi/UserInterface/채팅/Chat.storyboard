@@ -28,7 +28,7 @@
         <scene sceneID="pfU-Jf-HYL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n1p-iN-VFA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="채팅" image="bubble.left.and.bubble.right" catalog="system" id="jjZ-EN-bar"/>
+                    <tabBarItem key="tabBarItem" title="채팅" image="bxChat" id="jjZ-EN-bar"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FrJ-Y5-3cJ">
@@ -46,7 +46,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bubble.left.and.bubble.right" catalog="system" width="128" height="96"/>
+        <image name="bxChat" width="20" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -11,8 +11,22 @@ final class RequestTableViewCell: UITableViewCell {
 
     static let id = "RequestTableViewCell"
 
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var profileImageview: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var helpButton: UIButton!
+
+    var touchButton: (() -> Void)?
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        profileImageview.layer.cornerRadius = profileImageview.bounds.width/2
+        helpButton.layer.cornerRadius = 4
+    }
+
+    @IBAction func touchButton(_ sender: Any) {
+        touchButton?()
     }
 }
