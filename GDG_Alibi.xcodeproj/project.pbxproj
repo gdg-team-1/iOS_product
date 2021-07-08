@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8CC1FF200AC5664ECB61768C /* Pods_GDG_Alibi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB88BF19C0382508B5A12209 /* Pods_GDG_Alibi.framework */; };
+		B650595826969FE3005B5F56 /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650595626969FE3005B5F56 /* RequestTableViewCell.swift */; };
+		B650595926969FE3005B5F56 /* RequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B650595726969FE3005B5F56 /* RequestTableViewCell.xib */; };
 		B6B6024E269348BE005E5E34 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B6024D269348BE005E5E34 /* Home.storyboard */; };
 		B6C4623E26933567007E28C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C4623D26933567007E28C8 /* AppDelegate.swift */; };
 		B6C4624726933568007E28C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6C4624626933568007E28C8 /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 /* Begin PBXFileReference section */
 		0A24FD1B15524829F0F9E31D /* Pods-GDG_Alibi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDG_Alibi.release.xcconfig"; path = "Target Support Files/Pods-GDG_Alibi/Pods-GDG_Alibi.release.xcconfig"; sourceTree = "<group>"; };
 		75106E448921931102A6D361 /* Pods-GDG_Alibi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDG_Alibi.debug.xcconfig"; path = "Target Support Files/Pods-GDG_Alibi/Pods-GDG_Alibi.debug.xcconfig"; sourceTree = "<group>"; };
+		B650595626969FE3005B5F56 /* RequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
+		B650595726969FE3005B5F56 /* RequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestTableViewCell.xib; sourceTree = "<group>"; };
 		B6B6024D269348BE005E5E34 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		B6C4623A26933567007E28C8 /* GDG_Alibi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDG_Alibi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6C4623D26933567007E28C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +79,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B650595526969FCD005B5F56 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B650595626969FE3005B5F56 /* RequestTableViewCell.swift */,
+				B650595726969FE3005B5F56 /* RequestTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		B6B6024526934782005E5E34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +112,7 @@
 				B6E61861269354A7005FAC3D /* HomeViewController.swift */,
 				B6E61863269354C2005FAC3D /* HomeViewModel.swift */,
 				B6E61865269354F2005FAC3D /* HomeModel.swift */,
+				B650595526969FCD005B5F56 /* TableViewCell */,
 				B6E618672693583A005FAC3D /* CollectionViewCell */,
 			);
 			name = "홈";
@@ -255,6 +269,7 @@
 				B6C4624A26933568007E28C8 /* LaunchScreen.storyboard in Resources */,
 				B6C4624726933568007E28C8 /* Assets.xcassets in Resources */,
 				B6E6185F269352C8005FAC3D /* MyPage.storyboard in Resources */,
+				B650595926969FE3005B5F56 /* RequestTableViewCell.xib in Resources */,
 				B6E61859269351DA005FAC3D /* Template.storyboard in Resources */,
 				B6B6024E269348BE005E5E34 /* Home.storyboard in Resources */,
 				B6E6185B26935255005FAC3D /* Form.storyboard in Resources */,
@@ -312,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6E6185126934DFD005FAC3D /* MainTabBarController.swift in Sources */,
+				B650595826969FE3005B5F56 /* RequestTableViewCell.swift in Sources */,
 				B6C4623E26933567007E28C8 /* AppDelegate.swift in Sources */,
 				B6E61862269354A7005FAC3D /* HomeViewController.swift in Sources */,
 				B6E61866269354F2005FAC3D /* HomeModel.swift in Sources */,

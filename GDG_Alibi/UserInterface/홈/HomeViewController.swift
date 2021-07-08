@@ -10,13 +10,28 @@ import JTAppleCalendar
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var monthView: JTACMonthView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var monthLabel: UILabel!
+
     lazy var viewModel: HomeViewModel = {
         return HomeViewModel()
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        initView()
     }
+
+    private func initView() {
+        
+    }
+
+    @IBAction func moveMonth(_ sender: UIButton) {
+
+    }
+
 }
 
 extension HomeViewController: JTACMonthViewDataSource {
@@ -24,7 +39,7 @@ extension HomeViewController: JTACMonthViewDataSource {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
         let startDate = formatter.date(from: "2021 01 01")!
-        let endDate = Date()
+        let endDate = formatter.date(from: "2022 12 31")!
         return ConfigurationParameters(startDate: startDate, endDate: endDate)
     }
 }
@@ -46,3 +61,19 @@ extension HomeViewController: JTACMonthViewDelegate {
         return cell
     }
 }
+
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+}
+
+
+extension HomeViewController: UITableViewDelegate {
+
+}
+
