@@ -22,10 +22,10 @@ final class RequestTableViewCell: UITableViewCell {
 
     var model: RequestInfo? {
         didSet {
-            profileImageview.image = model?.profile
-            categoryLabel.text = model?.category
-            usernameLabel.text = model?.username
-            timeLabel.text = model?.dueDate
+//            profileImageview.image = model?.profile
+            categoryLabel.text = model?.category.first
+            usernameLabel.text = model?.requestUser
+            timeLabel.text = model?.dday
         }
     }
 

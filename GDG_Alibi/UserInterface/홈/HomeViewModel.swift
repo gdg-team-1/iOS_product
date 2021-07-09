@@ -7,40 +7,45 @@
 
 import UIKit
 
-struct RequestInfo: Identifiable {
-    var id: UUID = UUID()
-    var date: Date
-    var category: String
-    var username: String
-    var dueDate: String
-    var profile: UIImage
-}
-
 protocol HomeViewRequestDelegate {
     func request(didSuccessRequest list: [RequestInfo])
     func request(didFailRequest message: String)
 }
 
 final class HomeViewModel {
+    
+    public var list: [RequestInfo] = []
 
-    var list1 = [RequestInfo(date: Date(), category: "친구 사진만 필요", username: "푸키포", dueDate: "1분 내 필요", profile: UIImage(named: "profile1")!),
-    RequestInfo(date: Date(), category: "나와 같이 찍기", username: "아이린", dueDate: "17분 내 필요", profile: UIImage(named: "profile2")!),
-    RequestInfo(date: Date(), category: "나와 같이 찍기", username: "김하나", dueDate: "2시간 32분 내 필요", profile: UIImage(named: "profile3")!),
-    RequestInfo(date: Date(), category: "친구 사진만 필요", username: "푸키포", dueDate: "푸키포", profile: UIImage(named: "profile3")!),
-    RequestInfo(date: Date(), category: "나와 같이 찍기", username: "아이린", dueDate: "17분 내 필요", profile: UIImage(named: "profile2")!),
-    RequestInfo(date: Date(), category: "나와 같이 찍기", username: "김하나", dueDate: "2시간 32분 내 필요", profile: UIImage(named: "profile1")!),
-    RequestInfo(date: Date(), category: "친구 사진만 필요", username: "푸키포", dueDate: "푸키포", profile: UIImage(named: "profile3")!),
-    RequestInfo(date: Date(), category: "나와 같이 찍기", username: "아이린", dueDate: "17분 내 필요", profile: UIImage(named: "profile2")!),
-    RequestInfo(date: Date(), category: "나와 같이 찍기", username: "김하나", dueDate: "2시간 32분 내 필요", profile: UIImage(named: "profile1")!)]
-    var list2: [RequestInfo] = []
+    private var delegate: HomeViewRequestDelegate?
 
-    var delegate: HomeViewRequestDelegate?
+    private var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return formatter
+    }()
 
     init(delegate: HomeViewRequestDelegate) {
         self.delegate = delegate
     }
 
-    func requestList() {
-        self.delegate?.request(didSuccessRequest: list1)
+    func requestList(_ date: Date) {
+        let userid = ""
+        let dueDate = dateFormatter.string(from: date)
+        let location = "서울특별시 종로구 혜화동"
+        NetworkAdapter.request(target: TargetAPI.getMyList(user: userid,
+                                                           dueDate: dueDate,
+                                                           location: location)) { response in
+            do {
+                let list = try JSONDecoder().decode([RequestInfo].self, from: response.data)
+                self.list.append(contentsOf: list)
+                self.delegate?.request(didSuccessRequest: list)
+            } catch {
+                print("parse error:", error)
+            }
+        } error: { error in
+            print("error:", error.localizedDescription)
+        } failure: { failError in
+            print("Fail Error:", failError.localizedDescription)
+        }
     }
 }

@@ -20,8 +20,8 @@ class HomeViewController: UIViewController {
     }()
 
     private lazy var emptyView: EmptyView = {
-        let emptyView = EmptyView(frame: tableView.bounds)
-        emptyView.isHidden = true
+        let emptyView = EmptyView(frame: tableView.frame)
+        emptyView.isHidden = false
         return emptyView
     }()
 
@@ -105,8 +105,7 @@ extension HomeViewController: JTACMonthViewDelegate {
     func calendar(_ calendar: JTACMonthView, didSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
         guard let cell = cell as? DateCollectionViewCell else { return }
         cell.updateSelection(true)
-        // TODO: - tableview list 업데이트
-        viewModel.requestList()
+        viewModel.requestList(date)
     }
 
     func calendar(_ calendar: JTACMonthView, didDeselectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
@@ -128,7 +127,7 @@ extension HomeViewController: JTACMonthViewDelegate {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.list1.count
+        return viewModel.list.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -136,7 +135,7 @@ extension HomeViewController: UITableViewDataSource {
         cell.touchButton = {
 
         }
-        cell.model = viewModel.list1[indexPath.row]
+        cell.model = viewModel.list[indexPath.row]
         return cell
     }
 }
