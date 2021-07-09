@@ -108,7 +108,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="1re-Oa-m9u" secondAttribute="trailing" id="rf1-Hs-l9C"/>
                                                     </constraints>
                                                 </view>
-                                                <datePicker contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="slr-Dh-gY4">
+                                                <datePicker contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="slr-Dh-gY4">
                                                     <rect key="frame" x="0.0" y="146" width="414" height="0.0"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" id="WFH-16-Xj0"/>

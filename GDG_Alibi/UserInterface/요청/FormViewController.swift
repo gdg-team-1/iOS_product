@@ -35,13 +35,14 @@ final class FormViewController: UIViewController {
     }
 
     private func initViewModel() {
-
+        viewModel.doneSubmitForm = {
+            self.willDismissFormVC?()
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 
     @IBAction func touchSubmit(_ sender: Any) {
-        // TODO: - 요청서 submit 하기
-        willDismissFormVC?()
-        dismiss(animated: true, completion: nil)
+        viewModel.submitForm()
     }
 
     @IBAction func touchClose(_ sender: Any) {
@@ -63,14 +64,16 @@ extension FormViewController: UITableViewDataSource {
         switch SectionType(rawValue: indexPath.section) {
         case .dueDate:
             let cell = tableView.dequeueReusableCell(withIdentifier: DueDateTableViewCell.id, for: indexPath) as! DueDateTableViewCell
-            cell.didSelectDateBox = {
+            cell.touchDateBox = {
                 tableView.beginUpdates()
                 tableView.endUpdates()
             }
+            cell.model = viewModel.model
             return cell
 
         case .category:
             let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.id, for: indexPath) as! CategoryTableViewCell
+            cell.model = viewModel.model
             return cell
 
         case .none:

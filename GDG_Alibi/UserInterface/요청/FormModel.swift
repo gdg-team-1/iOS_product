@@ -7,20 +7,11 @@
 
 import Foundation
 
-class FormModel: Codable, Identifiable {
-    private enum CodingKeys: String, CodingKey {
-        case dueDate = "dday"
-        case location
-        case need
-        case user = "requestUser"
-        case title
-    }
-
-    var id: UUID?
-    
-    var dueDate: String
-    var location: String
-    var need: [String]
-    var user: String
-    var title: String
+class FormModel: Codable {
+    var id: Int?
+    var dday: String?
+    var location: String?
+    var category: [String] = []
+    var requestUser: String?
+    var title: String = ""
 }
