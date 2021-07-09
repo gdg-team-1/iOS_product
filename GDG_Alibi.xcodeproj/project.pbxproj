@@ -47,7 +47,7 @@
 		B6E6185F269352C8005FAC3D /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E6185E269352C8005FAC3D /* MyPage.storyboard */; };
 		B6E61862269354A7005FAC3D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E61861269354A7005FAC3D /* HomeViewController.swift */; };
 		B6E61864269354C2005FAC3D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E61863269354C2005FAC3D /* HomeViewModel.swift */; };
-		B6E61866269354F2005FAC3D /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E61865269354F2005FAC3D /* HomeModel.swift */; };
+		B6E61866269354F2005FAC3D /* RequestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E61865269354F2005FAC3D /* RequestInfo.swift */; };
 		B6E618692693586A005FAC3D /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E618682693586A005FAC3D /* DateCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,7 +95,7 @@
 		B6E6185E269352C8005FAC3D /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		B6E61861269354A7005FAC3D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B6E61863269354C2005FAC3D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		B6E61865269354F2005FAC3D /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		B6E61865269354F2005FAC3D /* RequestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInfo.swift; sourceTree = "<group>"; };
 		B6E618682693586A005FAC3D /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		EB88BF19C0382508B5A12209 /* Pods_GDG_Alibi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GDG_Alibi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -180,7 +180,7 @@
 				B6B6024D269348BE005E5E34 /* Home.storyboard */,
 				B6E61861269354A7005FAC3D /* HomeViewController.swift */,
 				B6E61863269354C2005FAC3D /* HomeViewModel.swift */,
-				B6E61865269354F2005FAC3D /* HomeModel.swift */,
+				B6E61865269354F2005FAC3D /* RequestInfo.swift */,
 				B650595526969FCD005B5F56 /* TableViewCell */,
 				B6E618672693583A005FAC3D /* CollectionViewCell */,
 				B69EA2B626971F3000CB3C2F /* EmptyView.swift */,
@@ -440,7 +440,7 @@
 				B69EA2C92697310000CB3C2F /* MonthCollectionReusableView.swift in Sources */,
 				B69EA2CC2697463B00CB3C2F /* FormViewController.swift in Sources */,
 				B69EA2B726971F3000CB3C2F /* EmptyView.swift in Sources */,
-				B6E61866269354F2005FAC3D /* HomeModel.swift in Sources */,
+				B6E61866269354F2005FAC3D /* RequestInfo.swift in Sources */,
 				B6E618692693586A005FAC3D /* DateCollectionViewCell.swift in Sources */,
 				B6E61864269354C2005FAC3D /* HomeViewModel.swift in Sources */,
 				B685B94426956CAE00CC11FE /* UserModel.swift in Sources */,

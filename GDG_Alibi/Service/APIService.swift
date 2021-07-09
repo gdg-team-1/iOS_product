@@ -11,10 +11,10 @@ import Moya
 enum TargetAPI {
     case getList
     case getAlibi(id: String)
-    case getMyList(user: String)
+    case getMyList(user: String, dueDate: String, location: String)
 
-    case submitAlibi(form: String)
-    case editAlibi(id: String, form: String)
+    case submitAlibi(form: FormModel)
+    case editAlibi(id: String, form: FormModel)
     case deleteAlibi(id: String)
 }
 
@@ -24,19 +24,19 @@ extension TargetAPI: TargetType {
 
     var path: String {
         switch self {
-        case .getList:                      return "/api/v1/alibi"
-        case .getAlibi(let id):             return "/api/v1/alibi/\(id)"
-        case .getMyList(let user):          return "/api/v1/alibi/search?requestUser={requestUser}"
-
-        case .submitAlibi(_):                  return "/api/v1/alibi"
-        case .editAlibi(let id, _):            return "/api/v1/alibi/\(id)"
-        case .deleteAlibi(let id):          return "/api/v1/alibi/\(id)"
+        case .getList:                                              return "/api/v1/alibi"
+        case .getAlibi(let id):                                     return "/api/v1/alibi/\(id)"
+        case .getMyList(let user, let dueDate, let location):
+            return "/api/v1/alibi/search?dDay=\(dueDate)&location=\(location)&requestUser=\(user)"
+        case .submitAlibi(_):                                       return "/api/v1/alibi"
+        case .editAlibi(let id, _):                                 return "/api/v1/alibi/\(id)"
+        case .deleteAlibi(let id):                                  return "/api/v1/alibi/\(id)"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .getList, .getAlibi(_), .getMyList(_):
+        case .getList, .getAlibi(_), .getMyList(_, _, _):
             return .get
         case .submitAlibi:
             return .post
@@ -53,8 +53,7 @@ extension TargetAPI: TargetType {
             return .requestPlain
 
         case .submitAlibi(let form), .editAlibi(_, let form):
-            let param: [String: Any] = [:]
-            return .requestParameters(parameters: param, encoding: URLEncoding.default)
+            return .requestJSONEncodable(form)
         }
     }
 
