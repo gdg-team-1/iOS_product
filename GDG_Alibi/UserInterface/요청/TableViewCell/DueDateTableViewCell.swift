@@ -21,7 +21,9 @@ final class DueDateTableViewCell: UITableViewCell {
 
     @IBOutlet weak var pickerView: UIDatePicker!
 
-    var didSelectDateBox: (() -> Void)?
+    var touchDateBox: (() -> Void)?
+
+    var model: FormModel?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -55,10 +57,15 @@ final class DueDateTableViewCell: UITableViewCell {
         UIView.animate(withDuration: 0.1) {
             self.layoutIfNeeded()
         } completion: { _ in
-            self.didSelectDateBox?()
+            self.touchDateBox?()
         }
     }
 
     @IBAction func selectDate(_ sender: UIDatePicker) {
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let selectedDate: String = dateFormatter.string(from: sender.date)
+        // TODO: - 칩 업데이트
+        model?.dday = selectedDate
     }
 }

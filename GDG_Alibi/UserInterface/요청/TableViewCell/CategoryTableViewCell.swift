@@ -15,6 +15,14 @@ final class CategoryTableViewCell: UITableViewCell {
     @IBOutlet var checkImageViews: [UIImageView]!
     @IBOutlet var categoryLabels: [UILabel]!
 
+    var chips: [String] = ["나와 같이 찍기", "친구 사진만", "배경 사진만", "전화 대신 받아주기"]
+
+    var model: FormModel? {
+        didSet {
+            
+        }
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -37,6 +45,6 @@ final class CategoryTableViewCell: UITableViewCell {
             $0.backgroundColor = $0.tag == tag ? #colorLiteral(red: 0.1725490196, green: 0.7803921569, blue: 0.5058823529, alpha: 1) : .systemBackground
         })
         categoryLabels.forEach({ $0.textColor = $0.tag == tag ? .white :  #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1) })
+        model?.category.append(chips[tag])
     }
-
 }
