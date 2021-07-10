@@ -18,5 +18,7 @@ class ChatListTableViewCell: UITableViewCell {
     
     func bind(data: ChatListModel) {
         self.titleLabel.text = data.title
+        self.dateLabel.text = data.date.monthDay()
+        self.subLabel.text = data.sub
     }
 }

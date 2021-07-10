@@ -6,19 +6,44 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 class ChatListViewModel {
     
-    let tempData: [ChatListModel] = {
-        (0...20).map {
-            ChatListModel(itemID: "",
-                          chatID: "documentID",
-                          users: [""],
-                          title: String($0),
-                          sub: "sub",
-                          date: Date())
+    var chatListData: [ChatListModel] = [ChatListModel]() {
+        didSet {
+            self.updateCallBack?()
         }
-    }()
+    }
+    
+    var updateCallBack: (() -> Void)?
     
     
+    
+    init() {
+        self.getList()
+    }
+    
+    
+    
+    func getList() {
+        Firestore
+            .firestore()
+            .collection("chatList")
+            .addSnapshotListener { snapshot, error in
+                if let error = error {
+                    print("\n---------------------- [ \(error.localizedDescription) ] ----------------------")
+                    
+                } else {
+                    guard let docuemnts = snapshot?.documents else { return }
+                    
+                    var tempData = [ChatListModel]()
+                    for document in docuemnts {
+                        let chatList = ChatListModel(snapshot: document)
+                        tempData.append(chatList)
+                    }
+                    self.chatListData = tempData
+                }
+            }
+    }
 }

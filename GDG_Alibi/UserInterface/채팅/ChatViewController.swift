@@ -8,7 +8,12 @@
 import UIKit
 
 class ChatViewController: UIViewController {
-
+    
+    var viewModel: ChatViewModel!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
