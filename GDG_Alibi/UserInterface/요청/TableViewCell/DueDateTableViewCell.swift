@@ -12,7 +12,6 @@ final class DueDateTableViewCell: UITableViewCell {
     static let id = "DueDateTableViewCell"
 
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
 
     @IBOutlet var chevronImageViews: [UIImageView]!
     @IBOutlet var boxViews: [UIView]!
@@ -39,12 +38,13 @@ final class DueDateTableViewCell: UITableViewCell {
         })
 
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM월dd일"
-        let today = dateFormatter.string(from: Date())
-        dateLabel.text = today
-        dateFormatter.dateFormat = "HH시mm분"
-        let currentTime = dateFormatter.string(from: Date())
-        timeLabel.text = currentTime
+        dateFormatter.locale = Locale(identifier:"ko_KR")
+
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        model?.dday = dateFormatter.string(from: Date())
+
+        dateFormatter.dateFormat = "MM월 dd일 E요일 a hh시 mm분"
+        dateLabel.text = dateFormatter.string(from: Date())
     }
 
     @IBAction func selectBox(_ sender: UIButton) {
@@ -63,9 +63,14 @@ final class DueDateTableViewCell: UITableViewCell {
 
     @IBAction func selectDate(_ sender: UIDatePicker) {
         let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier:"ko_KR")
+
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         let selectedDate: String = dateFormatter.string(from: sender.date)
-        // TODO: - 칩 업데이트
         model?.dday = selectedDate
+
+        dateFormatter.dateFormat = "MM월 dd일 E요일 a hh시 mm분"
+        let today = dateFormatter.string(from: sender.date)
+        dateLabel.text = today
     }
 }

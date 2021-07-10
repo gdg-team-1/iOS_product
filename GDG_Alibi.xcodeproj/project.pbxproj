@@ -36,6 +36,8 @@
 		B69EA2D32697507500CB3C2F /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EA2D22697507500CB3C2F /* FormViewModel.swift */; };
 		B69EA2D52697528C00CB3C2F /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EA2D42697528C00CB3C2F /* StationViewController.swift */; };
 		B6B6024E269348BE005E5E34 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B6024D269348BE005E5E34 /* Home.storyboard */; };
+		B6B9A623269970D4005EAFD7 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A622269970D4005EAFD7 /* CategoryView.swift */; };
+		B6B9A625269970E4005EAFD7 /* CategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B9A624269970E4005EAFD7 /* CategoryView.xib */; };
 		B6C4623E26933567007E28C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C4623D26933567007E28C8 /* AppDelegate.swift */; };
 		B6C4624726933568007E28C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6C4624626933568007E28C8 /* Assets.xcassets */; };
 		B6C4624A26933568007E28C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6C4624826933568007E28C8 /* LaunchScreen.storyboard */; };
@@ -82,6 +84,8 @@
 		B69EA2D22697507500CB3C2F /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
 		B69EA2D42697528C00CB3C2F /* StationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
 		B6B6024D269348BE005E5E34 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		B6B9A622269970D4005EAFD7 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		B6B9A624269970E4005EAFD7 /* CategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryView.xib; sourceTree = "<group>"; };
 		B6C4623A26933567007E28C8 /* GDG_Alibi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDG_Alibi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6C4623D26933567007E28C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6C4624626933568007E28C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -242,6 +246,8 @@
 				B69EA2D22697507500CB3C2F /* FormViewModel.swift */,
 				B69EA2CD269746B600CB3C2F /* TableViewCell */,
 				B69EA2D42697528C00CB3C2F /* StationViewController.swift */,
+				B6B9A622269970D4005EAFD7 /* CategoryView.swift */,
+				B6B9A624269970E4005EAFD7 /* CategoryView.xib */,
 			);
 			name = "요청";
 			path = "요청";
@@ -363,6 +369,7 @@
 				4F10B34C2695DE9A00E7006B /* GoogleService-Info.plist in Resources */,
 				B6C4624726933568007E28C8 /* Assets.xcassets in Resources */,
 				B6E6185F269352C8005FAC3D /* MyPage.storyboard in Resources */,
+				B6B9A625269970E4005EAFD7 /* CategoryView.xib in Resources */,
 				B69EA2B926971F3700CB3C2F /* EmptyView.xib in Resources */,
 				B650595926969FE3005B5F56 /* RequestTableViewCell.xib in Resources */,
 				B6E61859269351DA005FAC3D /* Template.storyboard in Resources */,
@@ -444,6 +451,7 @@
 				B6E618692693586A005FAC3D /* DateCollectionViewCell.swift in Sources */,
 				B6E61864269354C2005FAC3D /* HomeViewModel.swift in Sources */,
 				B685B94426956CAE00CC11FE /* UserModel.swift in Sources */,
+				B6B9A623269970D4005EAFD7 /* CategoryView.swift in Sources */,
 				4F10B3522695E34C00E7006B /* ChatListTableViewCell.swift in Sources */,
 				B69EA2CF269746C900CB3C2F /* DueDateTableViewCell.swift in Sources */,
 				4F10B34E2695E0A800E7006B /* ChatViewController.swift in Sources */,
@@ -589,7 +597,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 88356WAKJ6;
 				INFOPLIST_FILE = GDG_Alibi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -610,7 +618,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 88356WAKJ6;
 				INFOPLIST_FILE = GDG_Alibi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
