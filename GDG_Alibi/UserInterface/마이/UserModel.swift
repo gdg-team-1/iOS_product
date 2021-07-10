@@ -8,11 +8,6 @@
 import UIKit
 
 class UserModel: Codable {
-    var id: String
-    var nickname: String?
+    var id: String?
     var profileUrl: String?
-
-    init() {
-        id = UUID().uuidString
-    }
 }

@@ -7,56 +7,44 @@
 
 import UIKit
 
-typealias UserType = (id: UInt8, name: String, profile: UIImage?)
-
-final class BasicUserInfo: Identifiable {
+final class BasicUserInfo {
 
     static let shared = BasicUserInfo()
 
-    typealias Dict = [String: Any]
+    var isFirstLaunch: Bool { return UserDefaults.standard.string(forKey: UserDefaultsKey.id) == nil }
 
-    struct Key {
-        static let id = "id"
-        static let name = "name"
-        static let profile = "profile"
-    }
-
-    var isUserInfoEmpty: Bool { return userInfo == nil }
-
-    var userInfo: Dict? {
-        if let info = UserDefaults.standard.object(forKey: UserDefaultsKey.userInfo) as? Dict {
-            return info
-        } else {
-            return nil
+    var user: UserModel = UserModel() {
+        didSet {
+            if let id = user.id, !id.isEmpty {
+                setUserId(id)
+            }
         }
     }
-
-    var userId: UInt8
-    var username: String?
     var profileImage: UIImage?
-    var profileUrl: String?
-
-    init() {
-        userId = UUID().uuid.0
-    }
-
-    public func set(username: String) {
-        self.username = username
-    }
 
     public func setProfile(image: UIImage) {
         self.profileImage = image
     }
 
-    public func saveUserInfo() {
-        let dict: Dict = [Key.id: userId,
-                          Key.name: username ?? "",
-                          Key.profile: profileUrl ?? ""]
-        UserDefaults.standard.setValue(dict, forKey: UserDefaultsKey.userInfo)
+    public func setUserId(_ id: String) {
+        UserDefaults.standard.setValue(id, forKey: UserDefaultsKey.id)
     }
 
-    public func getUserInfo() {
-        guard !isUserInfoEmpty else { return }
-
+    public func getUserInfo(completion: @escaping ((String?) -> Void)) {
+        guard let id = UserDefaults.standard.string(forKey: UserDefaultsKey.id) else { return }
+        
+        NetworkAdapter.request(target: TargetAPI.getUserInfo(id: id)) { response in
+            do {
+                let user = try JSONDecoder().decode(UserModel.self, from: response.data)
+                self.user = user
+                completion(.none)
+            } catch {
+                completion(error.localizedDescription)
+            }
+        } error: { error in
+            completion(error.localizedDescription)
+        } failure: { failError in
+            completion(failError.localizedDescription)
+        }
     }
 }

@@ -28,18 +28,19 @@ final class HomeViewModel {
         self.delegate = delegate
     }
 
-    func requestList(_ date: Date) {
+    func requestList(_ date: Date, _ isSelf: Bool = false) {
         list.removeAll()
 
-        let userid = ""
+        let username = isSelf ? BasicUserInfo.shared.user.id ?? "" : ""
         let dueDate = dateFormatter.string(from: date)
         let location = LocationManager.shared.locationString
-        NetworkAdapter.request(target: TargetAPI.getMyList(user: userid,
+        
+        NetworkAdapter.request(target: TargetAPI.getMyList(user: username,
                                                            dueDate: dueDate,
                                                            location: location)) { response in
             do {
                 let list = try JSONDecoder().decode([RequestInfo].self, from: response.data)
-                self.list.append(contentsOf: list)
+                self.list = list
                 self.delegate?.request(didSuccessRequest: list)
             } catch {
                 print("parse error:", error)

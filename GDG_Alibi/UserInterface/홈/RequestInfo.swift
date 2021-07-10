@@ -13,4 +13,5 @@ struct RequestInfo: Identifiable, Decodable {
     var dday: String?
     var location: String
     var requestUser: String?
+    var profileUrl: String?
 }

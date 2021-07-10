@@ -14,11 +14,8 @@ final class FormViewModel {
     var doneSubmitForm: (() -> Void)?
 
     func submitForm() {
-        model.id = 1
-        model.location = "서울특별시 종로구 혜화동"
-        model.requestUser = "홍길동"
-        model.title = ""
-
+        model.location = LocationManager.shared.locationString
+        model.requestUser = BasicUserInfo.shared.user.id
         NetworkAdapter.request(target: TargetAPI.submitAlibi(form: model)) { _ in
             self.doneSubmitForm?()
         } error: { error in

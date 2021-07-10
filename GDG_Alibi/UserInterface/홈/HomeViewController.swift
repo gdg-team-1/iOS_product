@@ -19,6 +19,10 @@ class HomeViewController: UIViewController {
         return HomeViewModel(delegate: self)
     }()
 
+    lazy var checkView: CheckBoxView = {
+        return CheckBoxView()
+    }()
+
     private lazy var emptyView: EmptyView = {
         let emptyView = EmptyView(frame: tableView.frame)
         emptyView.isHidden = false
@@ -29,7 +33,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         initView()
-        initViewModel()
         initNotification()
     }
 
@@ -40,9 +43,10 @@ class HomeViewController: UIViewController {
         }
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: locationView)
 
-        let checkView = CheckBoxView()
         checkView.touchFilter = { [weak self] isSelected in
-            // TODO: - 리스트 필터링 하기
+            if let selectedDate = self?.monthView.selectedDates.first {
+                self?.viewModel.requestList(selectedDate, isSelected)
+            }
         }
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: checkView)
 
@@ -56,10 +60,6 @@ class HomeViewController: UIViewController {
 
         monthView.register(UINib(nibName: MonthCollectionReusableView.id, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MonthCollectionReusableView.id)
         monthView.selectDates([Date()])
-    }
-
-    private func initViewModel() {
-        viewModel.requestList(Date())
     }
 
     private func initNotification() {
@@ -78,7 +78,7 @@ class HomeViewController: UIViewController {
         
         if let date = formatter.date(from: dateString) {
             monthView.selectDates([date])
-            viewModel.requestList(date)
+            viewModel.requestList(date, checkView.isSelected)
         }
     }
 }
@@ -126,7 +126,7 @@ extension HomeViewController: JTACMonthViewDelegate {
     func calendar(_ calendar: JTACMonthView, didSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
         guard let cell = cell as? DateCollectionViewCell else { return }
         cell.updateSelection(true)
-        viewModel.requestList(date)
+        viewModel.requestList(date, checkView.isSelected)
     }
 
     func calendar(_ calendar: JTACMonthView, didDeselectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {

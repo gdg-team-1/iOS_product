@@ -65,7 +65,7 @@ class SelectNeighborViewController: UIViewController {
     }
 
     private func showNext() {
-        if BasicUserInfo.shared.userInfo == nil {
+        if BasicUserInfo.shared.user.id?.isEmpty ?? true {
             let storyboard = UIStoryboard(name: "MyPage", bundle: nil)
             guard let vc = storyboard.instantiateViewController(withIdentifier: ProfileViewController.id) as? ProfileViewController else { return }
             vc.isInitProcess = true

@@ -12,10 +12,24 @@ protocol ProfileRegisterDelegate {
     func profileRegistDidFail(_ message: String)
 }
 
+enum ImageType: String {
+    case JPG, PNG, NONE
+
+    var mime: String {
+        switch self {
+        case .JPG:      return "image/jpeg"
+        case .PNG:      return "image/png"
+        case .NONE:     return ""
+        }
+    }
+}
+
 final class ProfileViewModel {
 
-    var user = UserModel()
-    var profileImage: UIImage?
+    var user: UserModel? = BasicUserInfo.shared.user
+
+    var profileImage: UIImage? = BasicUserInfo.shared.profileImage
+    var type: ImageType = .JPG
 
     var delegate: ProfileRegisterDelegate?
 
@@ -23,53 +37,46 @@ final class ProfileViewModel {
         self.delegate = delegate
     }
 
-    let dispatchQueue = DispatchQueue(label: "cloth info request", qos: .background, attributes: .concurrent)
-    let dispatchGroup = DispatchGroup()
+    func registProfile() {
+        guard let image = profileImage else { return }
 
-    func submitUser() {
-        dispatchGroup.enter()
-        dispatchQueue.async {
-            self.registProfile(self.profileImage)
+        var compressedData: Data = Data()
+        switch type {
+        case .JPG:
+            if let data = image.jpegData(compressionQuality: 1.0) {
+                compressedData = data
+            }
+        case .PNG:
+            if let data = image.pngData() {
+                compressedData = data
+            }
+        case .NONE:
+            self.delegate?.profileRegistDidFail("해당 파일은 올릴 수 없는 확장자입니다")
         }
-        dispatchGroup.enter()
-        dispatchQueue.async {
-            self.registUser()
-        }
 
-        dispatchGroup.notify(queue: .main) {
-            self.delegate?.profileRegistDidSuccess()
-        }
-    }
-
-    func registProfile(_ image: UIImage?) {
-        guard let image = image else { return }
-
-        NetworkAdapter.request(target: TargetAPI.profileUpload(image: image)) { response in
-            self.dispatchGroup.leave()
+        NetworkAdapter.request(target: TargetAPI.profileUpload(data: compressedData, mimeType: type.mime)) { response in
         } error: { error in
-            self.dispatchGroup.leave()
             self.delegate?.profileRegistDidFail(error.localizedDescription)
         } failure: { failError in
-            self.dispatchGroup.leave()
             self.delegate?.profileRegistDidFail(failError.localizedDescription)
         }
     }
 
     func registUser() {
+        guard let user = user else { return }
         NetworkAdapter.request(target: TargetAPI.submitUser(user: user)) { response in
-            self.dispatchGroup.leave()
+            self.delegate?.profileRegistDidSuccess()
         } error: { error in
-            self.dispatchGroup.leave()
             self.delegate?.profileRegistDidFail(error.localizedDescription)
         } failure: { failError in
-            self.dispatchGroup.leave()
             self.delegate?.profileRegistDidFail(failError.localizedDescription)
         }
     }
 
     func editUserInfo() {
-        NetworkAdapter.request(target: TargetAPI.editUser(id: user.id, user: user)) { response in
-
+        guard let user = user, let id = user.id else { return }
+        NetworkAdapter.request(target: TargetAPI.editUser(id: id, user: user)) { response in
+            self.delegate?.profileRegistDidSuccess()
         } error: { error in
             self.delegate?.profileRegistDidFail(error.localizedDescription)
         } failure: { failError in
