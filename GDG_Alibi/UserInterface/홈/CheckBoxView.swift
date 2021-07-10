@@ -38,7 +38,10 @@ class CheckBoxView: UIView {
     }
 
     @IBAction func touchArea(_ sender: Any) {
+        UIImpactFeedbackGenerator().impactOccurred()
+
         isSelected = !isSelected
+        checkImageView.image = isSelected ? UIImage(named: "icCheckBox") : UIImage(named: "icNoneCheckBox")
         touchFilter?(isSelected)
     }
 }

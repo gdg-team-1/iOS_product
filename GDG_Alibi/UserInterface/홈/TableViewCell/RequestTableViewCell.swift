@@ -28,10 +28,17 @@ final class RequestTableViewCell: UITableViewCell {
 
     var model: RequestInfo? {
         didSet {
-//            profileImageview.image = model?.profile
-            categoryLabel.text = model?.category.first
-            usernameLabel.text = model?.requestUser
-            timeLabel.text = calculateDateInterval(model?.dday)
+            guard let model = model else { return }
+
+            if let url = URL(string: model.profileUrl ?? "") {
+                profileImageview.sd_setImage(with: url, completed: nil)
+            } else {
+                profileImageview.image = UIImage(named: "profilePlaceholder")
+            }
+
+            categoryLabel.text = model.category.first
+            usernameLabel.text = model.requestUser
+            timeLabel.text = calculateDateInterval(model.dday)
         }
     }
 

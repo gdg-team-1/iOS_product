@@ -13,11 +13,7 @@ final class CategoryTableViewCell: UITableViewCell {
 
     @IBOutlet var categoryViews: [CategoryView]!
 
-    var model: FormModel? {
-        didSet {
-            
-        }
-    }
+    var model: FormModel?
 
     override func awakeFromNib() {
         super.awakeFromNib()
