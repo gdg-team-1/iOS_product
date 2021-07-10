@@ -13,29 +13,63 @@ final class IntroViewController: UIViewController, ViewInfo {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
+    let dispatchQueue = DispatchQueue(label: "intro request", qos: .background, attributes: .concurrent)
+    let dispatchGroup = DispatchGroup()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initView()
-        fetchLocation()
+        fetchInfo()
     }
 
     private func initView() {
         activityIndicator.startAnimating()
     }
 
-    private func fetchLocation() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.25, execute: {
-            LocationManager.shared.fetchLocationList { [weak self] in
+    private func fetchInfo() {
+        self.dispatchGroup.enter()
+        self.dispatchQueue.async {
+            self.fetchLocation()
+        }
+
+        if !BasicUserInfo.shared.isFirstLaunch {
+            self.dispatchGroup.enter()
+            self.dispatchQueue.async {
+                self.fetchUserInfo()
+            }
+        }
+
+        self.dispatchGroup.notify(queue: .main) { [weak self] in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.25) {
                 self?.showMainVC()
             }
-        })
+        }
+    }
+
+    private func fetchLocation() {
+        LocationManager.shared.fetchLocationList { [weak self] in
+            self?.dispatchGroup.leave()
+        }
+    }
+
+    private func fetchUserInfo() {
+        BasicUserInfo.shared.getUserInfo { failMsg in
+            if let failMsg = failMsg {
+                let alert = UIAlertController(title: "알림", message: failMsg, preferredStyle: .alert)
+                let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
+                alert.addAction(ok)
+                self.present(alert, animated: true, completion: nil)
+            }
+
+            self.dispatchGroup.leave()
+        }
     }
 
     private func showMainVC() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
 
-        if LocationManager.shared.isLocationEmpty || BasicUserInfo.shared.isUserInfoEmpty {
+        if LocationManager.shared.isLocationEmpty {
             let storyBoard = UIStoryboard(name: "Location", bundle: nil)
             guard let vc = storyBoard.instantiateInitialViewController() as? UINavigationController else { return }
             appDelegate.window?.rootViewController = vc
