@@ -3,9 +3,44 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Intro View Controller-->
+        <scene sceneID="n28-o3-p9y">
+            <objects>
+                <viewController storyboardIdentifier="IntroViewController" id="HDJ-mt-knm" customClass="IntroViewController" customModule="GDG_Alibi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Si8-KL-x6k">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="AFI-Ox-Z0c">
+                                <rect key="frame" x="188.5" y="395" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alibaba" translatesAutoresizingMaskIntoConstraints="NO" id="DDZ-Pp-ldb">
+                                <rect key="frame" x="97.5" y="301" width="219" height="44"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XKA-y8-3go"/>
+                        <color key="backgroundColor" name="44199129"/>
+                        <constraints>
+                            <constraint firstItem="DDZ-Pp-ldb" firstAttribute="top" secondItem="XKA-y8-3go" secondAttribute="top" constant="257" id="HrB-f6-mr7"/>
+                            <constraint firstItem="AFI-Ox-Z0c" firstAttribute="top" secondItem="DDZ-Pp-ldb" secondAttribute="bottom" constant="50" id="S0P-Td-trU"/>
+                            <constraint firstItem="DDZ-Pp-ldb" firstAttribute="centerX" secondItem="XKA-y8-3go" secondAttribute="centerX" id="Y9O-uu-9Xm"/>
+                            <constraint firstItem="AFI-Ox-Z0c" firstAttribute="centerX" secondItem="DDZ-Pp-ldb" secondAttribute="centerX" id="own-bG-sgZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="AFI-Ox-Z0c" id="Xnh-O0-YTE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tRN-vE-19c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2145" y="-92"/>
+        </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="nRY-Og-THc">
             <objects>
@@ -78,4 +113,10 @@
             <point key="canvasLocation" x="-363" y="83"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="alibaba" width="219" height="44"/>
+        <namedColor name="44199129">
+            <color red="0.17254901960784313" green="0.7803921568627451" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

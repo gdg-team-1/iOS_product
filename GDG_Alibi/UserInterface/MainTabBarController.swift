@@ -7,7 +7,9 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
+final class MainTabBarController: UITabBarController, ViewInfo {
+
+    static var id: String = "MainTabBarController"
 
     override func viewDidLoad() {
         super.viewDidLoad()

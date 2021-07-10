@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,14 +12,93 @@
         <!--프로필-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="Y6W-OH-hqX" customClass="ProfileViewController" customModule="GDG_Alibi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="VGH-de-74U">
+                                <rect key="frame" x="152" y="133" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="8qg-S3-o8t"/>
+                                    <constraint firstAttribute="height" constant="110" id="cxF-Bc-7mA"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRI-qt-hlT">
+                                <rect key="frame" x="218" y="199" width="44" height="44"/>
+                                <color key="backgroundColor" name="44199129"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="dIX-zB-kDe"/>
+                                    <constraint firstAttribute="height" constant="44" id="lM0-wT-OE0"/>
+                                </constraints>
+                                <state key="normal" image="bxPencil"/>
+                                <connections>
+                                    <action selector="touchRegistImage:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qAp-uS-VYR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpL-ls-9ux">
+                                <rect key="frame" x="20" y="280" width="374" height="17"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="14"/>
+                                <color key="textColor" name="395972"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEd-WE-l4C">
+                                <rect key="frame" x="20" y="305" width="374" height="48"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pn7-G3-A2W">
+                                        <rect key="frame" x="16" y="13.5" width="342" height="21"/>
+                                        <color key="tintColor" name="395972"/>
+                                        <color key="textColor" name="395972"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="pn7-G3-A2W" firstAttribute="leading" secondItem="yEd-WE-l4C" secondAttribute="leading" constant="16" id="5mg-Bs-cdW"/>
+                                    <constraint firstItem="pn7-G3-A2W" firstAttribute="centerY" secondItem="yEd-WE-l4C" secondAttribute="centerY" id="GxF-Mr-dpp"/>
+                                    <constraint firstAttribute="height" constant="48" id="IbR-pq-cls"/>
+                                    <constraint firstAttribute="trailing" secondItem="pn7-G3-A2W" secondAttribute="trailing" constant="16" id="gZ1-Rb-eic"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZRI-qt-hlT" firstAttribute="trailing" secondItem="VGH-de-74U" secondAttribute="trailing" id="6VY-rl-Oae"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="UpL-ls-9ux" secondAttribute="trailing" constant="20" id="6dC-VB-LpI"/>
+                            <constraint firstItem="ZRI-qt-hlT" firstAttribute="bottom" secondItem="VGH-de-74U" secondAttribute="bottom" id="9k2-qD-kw2"/>
+                            <constraint firstItem="UpL-ls-9ux" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="GgL-0w-chd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yEd-WE-l4C" secondAttribute="trailing" constant="20" id="ZUb-iX-Re0"/>
+                            <constraint firstItem="yEd-WE-l4C" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="leJ-ka-sA0"/>
+                            <constraint firstItem="VGH-de-74U" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="pbS-Ek-3mw"/>
+                            <constraint firstItem="UpL-ls-9ux" firstAttribute="top" secondItem="VGH-de-74U" secondAttribute="bottom" constant="37" id="s5g-sg-R4g"/>
+                            <constraint firstItem="yEd-WE-l4C" firstAttribute="top" secondItem="UpL-ls-9ux" secondAttribute="bottom" constant="8" id="wZz-Cp-xiy"/>
+                            <constraint firstItem="VGH-de-74U" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="45" id="zEu-uW-AMN"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="프로필" id="vjr-p9-A44"/>
+                    <navigationItem key="navigationItem" title="프로필" id="vjr-p9-A44">
+                        <barButtonItem key="leftBarButtonItem" image="icBack" id="XME-4a-3Gd">
+                            <color key="tintColor" name="395972"/>
+                            <connections>
+                                <action selector="touchBack:" destination="Y6W-OH-hqX" id="3sj-yc-kcx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="xEa-oQ-bgA">
+                            <color key="tintColor" name="395972"/>
+                            <connections>
+                                <action selector="touchDone:" destination="Y6W-OH-hqX" id="Z7l-Lg-e4f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="XME-4a-3Gd" id="vXV-T4-WvU"/>
+                        <outlet property="doneButton" destination="xEa-oQ-bgA" id="5cV-iM-Y07"/>
+                        <outlet property="nameContainerView" destination="yEd-WE-l4C" id="dyL-ii-t5z"/>
+                        <outlet property="nameTextField" destination="pn7-G3-A2W" id="svU-a4-LfW"/>
+                        <outlet property="profileImageView" destination="VGH-de-74U" id="2zK-YT-PXQ"/>
+                        <outlet property="registImageButton" destination="ZRI-qt-hlT" id="cyU-Ch-nM0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -27,13 +107,14 @@
         <!--마이-->
         <scene sceneID="Xii-uw-cmi">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V8J-fY-HdF" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="V8J-fY-HdF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="마이" image="bxUser" id="Hna-Yl-roz"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zAh-Py-hcm">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemBackgroundColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -46,7 +127,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bxPencil" width="19" height="19"/>
         <image name="bxUser" width="18" height="19"/>
+        <image name="icBack" width="16" height="13"/>
+        <image name="profilePlaceholder" width="240" height="239"/>
+        <namedColor name="395972">
+            <color red="0.15294117647058825" green="0.23137254901960785" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="44199129">
+            <color red="0.17254901960784313" green="0.7803921568627451" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -29,9 +29,11 @@ final class HomeViewModel {
     }
 
     func requestList(_ date: Date) {
+        list.removeAll()
+
         let userid = ""
         let dueDate = dateFormatter.string(from: date)
-        let location = "서울특별시 종로구 혜화동"
+        let location = LocationManager.shared.locationString
         NetworkAdapter.request(target: TargetAPI.getMyList(user: userid,
                                                            dueDate: dueDate,
                                                            location: location)) { response in
