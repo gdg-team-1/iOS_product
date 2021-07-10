@@ -38,7 +38,7 @@ extension TargetAPI: TargetType {
         case .getUserInfo(let id):                                  return "/api/v1/user/detail/\(id)"
         case .submitUser(_):                                        return "/api/v1/user"
         case .editUser(let id, _):                                  return "/api/v1/user/detail/\(id)"
-        case .profileUpload(_):                                  return "/api/v1/user/imageFileUpLoad"
+        case .profileUpload(_):                                     return "/api/v1/user/imageFileUpLoad"
         }
     }
 
