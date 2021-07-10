@@ -106,11 +106,20 @@
                     <connections>
                         <outlet property="monthView" destination="pC5-cT-eug" id="KqB-K2-ceM"/>
                         <outlet property="tableView" destination="xAm-BT-4qP" id="vB4-V6-gYg"/>
+                        <segue destination="O3B-cN-Afs" kind="presentation" identifier="selectLocation" id="MIZ-i1-y7S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="130.58035714285714"/>
+        </scene>
+        <!--Location-->
+        <scene sceneID="qc5-i1-LRT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Location" id="O3B-cN-Afs" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tZV-UC-n0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1653" y="131"/>
         </scene>
         <!--홈-->
         <scene sceneID="3dI-qp-gC3">
