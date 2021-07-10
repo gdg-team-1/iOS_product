@@ -10,6 +10,9 @@ import FirebaseFirestore
 
 class ChatListViewModel {
     
+    private var listener: ListenerRegistration?
+    private let firestore = Firestore.firestore()
+    
     var chatListData: [ChatListModel] = [ChatListModel]() {
         didSet {
             self.updateCallBack?()
@@ -24,11 +27,14 @@ class ChatListViewModel {
         self.getList()
     }
     
+    deinit {
+        self.listener?.remove()
+    }
+    
     
     
     func getList() {
-        Firestore
-            .firestore()
+        self.listener = firestore
             .collection("chatList")
             .addSnapshotListener { snapshot, error in
                 if let error = error {
