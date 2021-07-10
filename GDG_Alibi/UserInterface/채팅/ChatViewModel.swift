@@ -15,7 +15,7 @@ class ChatViewModel {
     
     
     private let documentID: String
-    var chatData: [MessageModel] = [MessageModel]() {
+    var chatData: [ChatModel] = [ChatModel]() {
         didSet {
             self.updateCallBack?()
         }
@@ -31,49 +31,54 @@ class ChatViewModel {
         self.addListener()
     }
     
-    private func addListener() {
-      listener = firestore
-        .collection("chatList")
-        .document(self.documentID)
-        .collection("message")
-        .addSnapshotListener { [weak self] (snapshot, error) in
-          
-          print("\n---------------------- [ ChatViewModel addListener ] ----------------------")
-          
-          if let error = error {
-            print("\n---------------------- [ \(error.localizedDescription) ] ----------------------")
-            
-            
-          } else {
-            guard let self = self, let documents = snapshot?.documents else { return }
-            
-            var tempData = [MessageModel]()
-            
-            for document in documents {
-                let message = MessageModel(snapshot: document)
-                
-                tempData.append(message)
-            }
-            
-            tempData.sort { $0.date < $1.date }
-            self.chatData = tempData
-          }
-        }
+    deinit {
+        self.listener?.remove()
     }
     
     
     
-    func addMessage(message: MessageModel) {
+    // 채팅 리스너
+    private func addListener() {
+        self.listener = firestore
+            .collection("chatList")
+            .document(self.documentID)
+            .collection("message")
+            .addSnapshotListener { [weak self] (snapshot, error) in
+                
+                print("\n---------------------- [ ChatViewModel addListener ] ----------------------")
+                
+                if let error = error {
+                    print("\n---------------------- [ \(error.localizedDescription) ] ----------------------")
+                    
+                    
+                } else {
+                    guard let self = self, let documents = snapshot?.documents else { return }
+                    
+                    var tempData = [ChatModel]()
+                    
+                    for document in documents {
+                        let message = ChatModel(snapshot: document)
+                        
+                        tempData.append(message)
+                    }
+                    
+                    tempData.sort { $0.date < $1.date }
+                    self.chatData = tempData
+                }
+            }
+    }
+    
+    
+    
+    // 메시지 추가
+    func addMessage(chat: ChatModel) {
+        
+        print("\n---------------------- [ ChatViewModel addMessage ] ----------------------")
+        
         self.firestore
             .collection("chatList")
             .document(self.documentID)
             .collection("message")
-            .addDocument(data: message.toDictionary())
-    }
-    
-    
-    
-    func out() {
-        self.listener?.remove()
+            .addDocument(data: chat.toDictionary())
     }
 }

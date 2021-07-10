@@ -11,8 +11,6 @@ class ChatListViewController: UIViewController {
     
     private var viewModel: ChatListViewModel = ChatListViewModel()
     
-    private var selectIndex: IndexPath?
-    
     
     @IBOutlet weak var requestButton: UIButton!
     @IBOutlet weak var heipButton: UIButton!
@@ -34,7 +32,7 @@ class ChatListViewController: UIViewController {
         
         guard
             let dest = segue.destination as? ChatViewController,
-            let index = self.selectIndex
+            let index = sender as? IndexPath
         else { return }
         
         let documentID = self.viewModel.chatListData[index.row].chatDocumentID
@@ -94,7 +92,6 @@ extension ChatListViewController: UITableViewDataSource {
 extension ChatListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectIndex = indexPath
-        self.performSegue(withIdentifier: "chat", sender: nil)
+        self.performSegue(withIdentifier: "chat", sender: indexPath)
     }
 }

@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F0598A82699E35E00E1C015 /* ChatMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0598A72699E35E00E1C015 /* ChatMessageTableViewCell.swift */; };
+		4F0598AA2699E94000E1C015 /* FirebaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0598A92699E94000E1C015 /* FirebaseUtil.swift */; };
+		4F0598AC269A257600E1C015 /* ChatPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0598AB269A257600E1C015 /* ChatPhotoViewController.swift */; };
 		4F10B34E2695E0A800E7006B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F10B34D2695E0A800E7006B /* ChatViewController.swift */; };
 		4F10B3502695E0B600E7006B /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F10B34F2695E0B600E7006B /* ChatListViewController.swift */; };
 		4F10B3522695E34C00E7006B /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F10B3512695E34C00E7006B /* ChatListTableViewCell.swift */; };
 		4F10B3542695E86B00E7006B /* ChatListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F10B3532695E86B00E7006B /* ChatListModel.swift */; };
 		4F10B3562695EB5F00E7006B /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F10B3552695EB5F00E7006B /* ChatListViewModel.swift */; };
 		4F10B3582695FA7E00E7006B /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F10B3572695FA7E00E7006B /* ChatViewModel.swift */; };
-		4F10B35A2695FA9500E7006B /* ChatMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F10B3592695FA9500E7006B /* ChatMessageModel.swift */; };
 		4F91908F2699271D00704FD2 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F91908E2699271D00704FD2 /* ChatModel.swift */; };
 		4FA5DFFA2698B8E30080E378 /* ExtensionDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA5DFF92698B8E30080E378 /* ExtensionDate.swift */; };
 		8CC1FF200AC5664ECB61768C /* Pods_GDG_Alibi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB88BF19C0382508B5A12209 /* Pods_GDG_Alibi.framework */; };
@@ -74,13 +76,15 @@
 
 /* Begin PBXFileReference section */
 		0A24FD1B15524829F0F9E31D /* Pods-GDG_Alibi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDG_Alibi.release.xcconfig"; path = "Target Support Files/Pods-GDG_Alibi/Pods-GDG_Alibi.release.xcconfig"; sourceTree = "<group>"; };
+		4F0598A72699E35E00E1C015 /* ChatMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageTableViewCell.swift; sourceTree = "<group>"; };
+		4F0598A92699E94000E1C015 /* FirebaseUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUtil.swift; sourceTree = "<group>"; };
+		4F0598AB269A257600E1C015 /* ChatPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPhotoViewController.swift; sourceTree = "<group>"; };
 		4F10B34D2695E0A800E7006B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		4F10B34F2695E0B600E7006B /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		4F10B3512695E34C00E7006B /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
 		4F10B3532695E86B00E7006B /* ChatListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListModel.swift; sourceTree = "<group>"; };
 		4F10B3552695EB5F00E7006B /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
 		4F10B3572695FA7E00E7006B /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
-		4F10B3592695FA9500E7006B /* ChatMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageModel.swift; sourceTree = "<group>"; };
 		4F91908E2699271D00704FD2 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		4FA5DFF92698B8E30080E378 /* ExtensionDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDate.swift; sourceTree = "<group>"; };
 		75106E448921931102A6D361 /* Pods-GDG_Alibi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDG_Alibi.debug.xcconfig"; path = "Target Support Files/Pods-GDG_Alibi/Pods-GDG_Alibi.debug.xcconfig"; sourceTree = "<group>"; };
@@ -364,7 +368,9 @@
 				4F10B34D2695E0A800E7006B /* ChatViewController.swift */,
 				4F10B3572695FA7E00E7006B /* ChatViewModel.swift */,
 				4F91908E2699271D00704FD2 /* ChatModel.swift */,
-				4F10B3592695FA9500E7006B /* ChatMessageModel.swift */,
+				4F0598A72699E35E00E1C015 /* ChatMessageTableViewCell.swift */,
+				4F0598AB269A257600E1C015 /* ChatPhotoViewController.swift */,
+				4F0598A92699E94000E1C015 /* FirebaseUtil.swift */,
 			);
 			name = "채팅";
 			path = "채팅";
@@ -538,6 +544,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B69EA2D52697528C00CB3C2F /* StationViewController.swift in Sources */,
+				4F0598AC269A257600E1C015 /* ChatPhotoViewController.swift in Sources */,
 				B6B9A61A26994F40005EAFD7 /* UIButton+.swift in Sources */,
 				B69EA2D32697507500CB3C2F /* FormViewModel.swift in Sources */,
 				B6B9A6032698840E005EAFD7 /* LocationTableViewCell.swift in Sources */,
@@ -546,6 +553,7 @@
 				4F10B3542695E86B00E7006B /* ChatListModel.swift in Sources */,
 				B685B9402695688300CC11FE /* APIService.swift in Sources */,
 				B6B9A60026988348005EAFD7 /* SelectCityViewController.swift in Sources */,
+				4F0598A82699E35E00E1C015 /* ChatMessageTableViewCell.swift in Sources */,
 				B6E6185126934DFD005FAC3D /* MainTabBarController.swift in Sources */,
 				4F10B3562695EB5F00E7006B /* ChatListViewModel.swift in Sources */,
 				B69EA2D1269746EB00CB3C2F /* CategoryTableViewCell.swift in Sources */,
@@ -559,7 +567,6 @@
 				B6B9A62026996514005EAFD7 /* BasicUserInfo.swift in Sources */,
 				B6B9A60626988623005EAFD7 /* IntroViewController.swift in Sources */,
 				B6B9A60E26993213005EAFD7 /* LocationManager.swift in Sources */,
-				4F10B35A2695FA9500E7006B /* ChatMessageModel.swift in Sources */,
 				B6B9A60826992EB7005EAFD7 /* LocationModel.swift in Sources */,
 				B6B9A6292699A9D9005EAFD7 /* DateUtil.swift in Sources */,
 				B6E61862269354A7005FAC3D /* HomeViewController.swift in Sources */,
@@ -574,6 +581,7 @@
 				4FA5DFFA2698B8E30080E378 /* ExtensionDate.swift in Sources */,
 				B685B94426956CAE00CC11FE /* UserModel.swift in Sources */,
 				B6B9A623269970D4005EAFD7 /* CategoryView.swift in Sources */,
+				4F0598AA2699E94000E1C015 /* FirebaseUtil.swift in Sources */,
 				4F10B3522695E34C00E7006B /* ChatListTableViewCell.swift in Sources */,
 				B69EA2CF269746C900CB3C2F /* DueDateTableViewCell.swift in Sources */,
 				4F10B34E2695E0A800E7006B /* ChatViewController.swift in Sources */,
