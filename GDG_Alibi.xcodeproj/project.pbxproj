@@ -56,6 +56,7 @@
 		B6B9A623269970D4005EAFD7 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A622269970D4005EAFD7 /* CategoryView.swift */; };
 		B6B9A625269970E4005EAFD7 /* CategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B9A624269970E4005EAFD7 /* CategoryView.xib */; };
 		B6B9A62726999080005EAFD7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6B9A62626999080005EAFD7 /* GoogleService-Info.plist */; };
+		B6B9A6292699A9D9005EAFD7 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A6282699A9D9005EAFD7 /* DateUtil.swift */; };
 		B6C4623E26933567007E28C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C4623D26933567007E28C8 /* AppDelegate.swift */; };
 		B6C4624726933568007E28C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6C4624626933568007E28C8 /* Assets.xcassets */; };
 		B6C4624A26933568007E28C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6C4624826933568007E28C8 /* LaunchScreen.storyboard */; };
@@ -122,7 +123,8 @@
 		B6B9A622269970D4005EAFD7 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		B6B9A624269970E4005EAFD7 /* CategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryView.xib; sourceTree = "<group>"; };
 		B6B9A62626999080005EAFD7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		B6C4623A26933567007E28C8 /* GDG_Alibi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDG_Alibi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6B9A6282699A9D9005EAFD7 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		B6C4623A26933567007E28C8 /* 알리바바.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "알리바바.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6C4623D26933567007E28C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6C4624626933568007E28C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6C4624926933568007E28C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -302,7 +304,7 @@
 		B6C4623B26933567007E28C8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B6C4623A26933567007E28C8 /* GDG_Alibi.app */,
+				B6C4623A26933567007E28C8 /* 알리바바.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,6 +317,7 @@
 				B6B9A61126993FDA005EAFD7 /* UserDefaultsKey.swift */,
 				B6B9A60D26993213005EAFD7 /* LocationManager.swift */,
 				B6B9A61F26996514005EAFD7 /* BasicUserInfo.swift */,
+				B6B9A6282699A9D9005EAFD7 /* DateUtil.swift */,
 				B6B9A61826994F39005EAFD7 /* Extension */,
 				B6B9A61326994194005EAFD7 /* Protocol */,
 				B685B93C2695680700CC11FE /* Service */,
@@ -424,7 +427,7 @@
 			);
 			name = GDG_Alibi;
 			productName = GDG_Alibi;
-			productReference = B6C4623A26933567007E28C8 /* GDG_Alibi.app */;
+			productReference = B6C4623A26933567007E28C8 /* 알리바바.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -558,6 +561,7 @@
 				B6B9A60E26993213005EAFD7 /* LocationManager.swift in Sources */,
 				4F10B35A2695FA9500E7006B /* ChatMessageModel.swift in Sources */,
 				B6B9A60826992EB7005EAFD7 /* LocationModel.swift in Sources */,
+				B6B9A6292699A9D9005EAFD7 /* DateUtil.swift in Sources */,
 				B6E61862269354A7005FAC3D /* HomeViewController.swift in Sources */,
 				B69EA2C92697310000CB3C2F /* MonthCollectionReusableView.swift in Sources */,
 				B69EA2CC2697463B00CB3C2F /* FormViewController.swift in Sources */,
@@ -726,7 +730,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alibaba.gdg;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "알리바바";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -748,7 +752,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alibaba.gdg;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "알리바바";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

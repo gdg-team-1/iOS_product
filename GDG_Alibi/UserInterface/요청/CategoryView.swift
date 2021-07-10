@@ -15,10 +15,10 @@ enum CategoryType: Int {
 
     var title: String {
         switch self {
-        case .withMe:       return "나와 같이 찍기"
-        case .friend:       return "친구 사진만"
-        case .background:   return "배경 사진만"
-        case .call:         return "전화 대신 받아주기"
+        case .withMe:       return "나와 같이 찍기 📸"
+        case .friend:       return "친구 사진만 👩‍❤️‍👨"
+        case .background:   return "배경 사진만 🏞"
+        case .call:         return "전화 대신 받아주기 ☎️"
         }
     }
 }
