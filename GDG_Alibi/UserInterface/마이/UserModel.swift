@@ -7,8 +7,12 @@
 
 import UIKit
 
-struct UserModel: Identifiable {
-    var id: UUID = UUID()
-    var username: String
-    var profile: UIImage
+class UserModel: Codable {
+    var id: String
+    var nickname: String?
+    var profileUrl: String?
+
+    init() {
+        id = UUID().uuidString
+    }
 }

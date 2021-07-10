@@ -16,6 +16,10 @@ enum TargetAPI {
     case submitAlibi(form: FormModel)
     case editAlibi(id: String, form: FormModel)
     case deleteAlibi(id: String)
+
+    case submitUser(user: UserModel)
+    case editUser(id: String, user: UserModel)
+    case profileUpload(image: UIImage)
 }
 
 extension TargetAPI: TargetType {
@@ -30,6 +34,9 @@ extension TargetAPI: TargetType {
         case .submitAlibi(_):                                       return "/api/v1/alibi"
         case .editAlibi(let id, _):                                 return "/api/v1/alibi/\(id)"
         case .deleteAlibi(let id):                                  return "/api/v1/alibi/\(id)"
+        case .submitUser(_):                                        return "/api/v1/user"
+        case .editUser(let id, _):                                  return "/api/v1/user/detail/\(id)"
+        case .profileUpload(_):                                     return "/api/v1/user/imageFileUpLoad"
         }
     }
 
@@ -37,9 +44,9 @@ extension TargetAPI: TargetType {
         switch self {
         case .getList, .getAlibi(_), .getMyList(_, _, _):
             return .get
-        case .submitAlibi:
+        case .submitAlibi, .submitUser(_), .profileUpload(_):
             return .post
-        case .editAlibi(_, _):
+        case .editAlibi(_, _), .editUser(_, _):
             return .put
         case .deleteAlibi(_):
             return .delete
@@ -57,6 +64,14 @@ extension TargetAPI: TargetType {
 
         case .submitAlibi(let form), .editAlibi(_, let form):
             return .requestJSONEncodable(form)
+
+        case .submitUser(let user), .editUser(_, let user):
+            return .requestJSONEncodable(user)
+
+        case .profileUpload(let image):
+            let imageData = image.jpegData(compressionQuality: 1.0)
+            let formData = MultipartFormData(provider: .data(imageData!), name: "profile_img")
+            return .uploadMultipart([formData])
         }
     }
 
