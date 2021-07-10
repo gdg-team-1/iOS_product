@@ -38,6 +38,7 @@ class HomeViewController: UIViewController {
             self?.performSegue(withIdentifier: "selectLocation", sender: nil)
         }
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: locationView)
+
         let checkView = CheckBoxView()
         checkView.touchFilter = { [weak self] isSelected in
             // TODO: - 리스트 필터링 하기
@@ -51,14 +52,13 @@ class HomeViewController: UIViewController {
         tableView.backgroundView = emptyView
         tableView.estimatedRowHeight = 105
         tableView.register(UINib(nibName: RequestTableViewCell.id, bundle: nil), forCellReuseIdentifier: RequestTableViewCell.id)
+
         monthView.register(UINib(nibName: MonthCollectionReusableView.id, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MonthCollectionReusableView.id)
+        monthView.selectDates([Date()])
     }
 
     private func initViewModel() {
-    }
-
-    @IBAction func moveMonth(_ sender: UIButton) {
-
+        viewModel.requestList(Date())
     }
 }
 
@@ -140,7 +140,5 @@ extension HomeViewController: UITableViewDataSource {
     }
 }
 
-extension HomeViewController: UITableViewDelegate {
-
-}
+extension HomeViewController: UITableViewDelegate {}
 
