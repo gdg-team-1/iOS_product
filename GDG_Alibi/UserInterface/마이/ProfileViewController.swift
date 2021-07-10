@@ -43,7 +43,6 @@ final class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         initView()
-        initViewModel()
     }
 
     private func initView() {
@@ -64,12 +63,11 @@ final class ProfileViewController: UIViewController {
         self.view.addGestureRecognizer(tapRecognizer)
 
         imagePicker.delegate = self
-    }
 
-    private func initViewModel() {
-        if isInitProcess { return }
-
-        // TODO: 유저정보 셋팅
+        if !isInitProcess {
+            profileImageView.image = BasicUserInfo.shared.profileImage
+            nameTextField.text = viewModel.user?.id
+        }
     }
 
     private func barButtonValidation() {
@@ -85,8 +83,16 @@ final class ProfileViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
-    @IBAction func touchDone(_ sender: Any) {
-        viewModel.submitUser()
+    @objc @IBAction func touchDone(_ sender: Any) {
+        guard let name = nameTextField.text else { return }
+
+        if isInitProcess {
+            viewModel.user?.id = name
+            viewModel.registUser()
+        } else {
+            viewModel.user?.id = name
+            viewModel.editUserInfo()
+        }
 
         navigationItem.rightBarButtonItem = nil
         nameTextField.resignFirstResponder()
@@ -99,8 +105,6 @@ final class ProfileViewController: UIViewController {
 
 extension ProfileViewController: ProfileRegisterDelegate {
     func profileRegistDidSuccess() {
-        BasicUserInfo.shared.saveUserInfo()
-
         if isInitProcess {
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
             appDelegate.showHome()
@@ -119,7 +123,10 @@ extension ProfileViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         nameContainerView.layer.borderColor = enable.cgColor
         nameTextField.text = nil
-        navigationItem.rightBarButtonItem = doneButton
+
+        let done = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(touchDone(_:)))
+        done.tintColor = enable
+        navigationItem.rightBarButtonItem = done
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -138,13 +145,39 @@ extension ProfileViewController: UITextFieldDelegate {
 extension ProfileViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[.originalImage] as? UIImage {
-            profileImageView.image = image
+        if let path = info[.imageURL] as? NSURL {
+            if path.absoluteString?.hasSuffix("JPG") ?? false {
+                viewModel.type = .JPG
+            } else if path.absoluteString?.hasSuffix("PNG") ?? false {
+                viewModel.type = .PNG
+            } else {
+                viewModel.type = .NONE
+            }
         }
+
+        if let image = info[.originalImage] as? UIImage {
+            let resizeImage = resizeImage(image: image)
+            BasicUserInfo.shared.profileImage = resizeImage
+            viewModel.profileImage = resizeImage
+            profileImageView.image = resizeImage
+            viewModel.registProfile()
+        }
+        
         imagePicker.dismiss(animated: true, completion: nil)
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         imagePicker.dismiss(animated: true, completion: nil)
+    }
+
+    private func resizeImage(image: UIImage, newWidth: CGFloat = 200) -> UIImage? {
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
     }
 }
