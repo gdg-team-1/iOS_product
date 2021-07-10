@@ -34,8 +34,8 @@ class HomeViewController: UIViewController {
 
     private func initView() {
         let locationView = LocationBarView()
-        locationView.touchLocationItem = {
-            // TODO: - 리스트 불러오기
+        locationView.touchLocationItem = { [weak self] in
+            self?.performSegue(withIdentifier: "selectLocation", sender: nil)
         }
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: locationView)
         let checkView = CheckBoxView()

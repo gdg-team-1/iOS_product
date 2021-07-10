@@ -29,6 +29,8 @@ final class HomeViewModel {
     }
 
     func requestList(_ date: Date) {
+        list.removeAll()
+
         let userid = ""
         let dueDate = dateFormatter.string(from: date)
         let location = "서울특별시 종로구 혜화동"

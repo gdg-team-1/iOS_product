@@ -34,9 +34,11 @@ final class LocationBarView: UIView {
     }
 
     private func initView() {
+        locationLabel.text = LocationManager.shared.myNeighbor
     }
 
     @IBAction func touchArea(_ sender: Any) {
+        UISelectionFeedbackGenerator().selectionChanged()
         touchLocationItem?()
     }
 }
