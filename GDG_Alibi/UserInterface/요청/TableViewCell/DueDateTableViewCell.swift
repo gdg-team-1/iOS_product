@@ -72,5 +72,7 @@ final class DueDateTableViewCell: UITableViewCell {
         dateFormatter.dateFormat = "MM월 dd일 E요일 a hh시 mm분"
         let today = dateFormatter.string(from: sender.date)
         dateLabel.text = today
+
+        NotificationCenter.default.post(name: .didChangeFormValue, object: nil)
     }
 }

@@ -30,6 +30,7 @@ class HomeViewController: UIViewController {
 
         initView()
         initViewModel()
+        initNotification()
     }
 
     private func initView() {
@@ -59,6 +60,26 @@ class HomeViewController: UIViewController {
 
     private func initViewModel() {
         viewModel.requestList(Date())
+    }
+
+    private func initNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleSubmitForm(_:)), name: .requestFormatDidEnd, object: nil)
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .requestFormatDidEnd, object: nil)
+    }
+
+    @objc func handleSubmitForm(_ notification: Notification) {
+        guard let dateString = notification.object as? String else { return }
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        
+        if let date = formatter.date(from: dateString) {
+            monthView.selectDates([date])
+            viewModel.requestList(date)
+        }
     }
 }
 

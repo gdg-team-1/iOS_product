@@ -12,6 +12,11 @@ enum SectionType: Int, CaseIterable {
     case category
 }
 
+extension Notification.Name {
+    static let didChangeFormValue = Notification.Name("didChangeFormValue")
+    static let requestFormatDidEnd = Notification.Name("requestFormatDidEnd")
+}
+
 final class FormViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -21,6 +26,13 @@ final class FormViewController: UIViewController {
         return FormViewModel()
     }()
 
+    struct Status {
+        struct Color {
+            static let enable: UIColor = #colorLiteral(red: 0.1725490196, green: 0.7803921569, blue: 0.5058823529, alpha: 1)
+            static let disable: UIColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
+        }
+    }
+
     var willDismissFormVC: (() -> Void)?
 
     override func viewDidLoad() {
@@ -28,17 +40,36 @@ final class FormViewController: UIViewController {
 
         initView()
         initViewModel()
+        initNotification()
     }
 
     private func initView() {
         submitButton.layer.cornerRadius = 4
+
+        submitButton.setBackgroundColor(Status.Color.disable, for: .disabled)
+        submitButton.setBackgroundColor(Status.Color.enable, for: .normal)
+        submitButton.isEnabled = false
     }
 
     private func initViewModel() {
         viewModel.doneSubmitForm = {
+            NotificationCenter.default.post(name: .requestFormatDidEnd, object: self.viewModel.model.dday)
+
             self.willDismissFormVC?()
             self.dismiss(animated: true, completion: nil)
         }
+    }
+
+    private func initNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleValueChange), name: .didChangeFormValue, object: nil)
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .didChangeFormValue, object: nil)
+    }
+
+    @objc func handleValueChange() {
+        submitButton.isEnabled = viewModel.model.dday != nil && !viewModel.model.category.isEmpty
     }
 
     @IBAction func touchSubmit(_ sender: Any) {

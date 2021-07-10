@@ -81,6 +81,7 @@ final class CategoryView: UIView {
         setStatus(!selectButton.isSelected)
 
         NotificationCenter.default.post(name: .selectCategoryType, object: category)
+        NotificationCenter.default.post(name: .didChangeFormValue, object: nil)
     }
 
     public func setStatus(_ isSelected: Bool) {
