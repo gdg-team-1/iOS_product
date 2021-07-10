@@ -94,6 +94,8 @@ final class ProfileViewController: UIViewController {
             viewModel.editUserInfo()
         }
 
+        BasicUserInfo.shared.setUserId(name)
+
         navigationItem.rightBarButtonItem = nil
         nameTextField.resignFirstResponder()
     }

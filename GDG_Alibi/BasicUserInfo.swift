@@ -13,13 +13,7 @@ final class BasicUserInfo {
 
     var isFirstLaunch: Bool { return UserDefaults.standard.string(forKey: UserDefaultsKey.id) == nil }
 
-    var user: UserModel = UserModel() {
-        didSet {
-            if let id = user.id, !id.isEmpty {
-                setUserId(id)
-            }
-        }
-    }
+    var user: UserModel = UserModel()
     var profileImage: UIImage?
 
     public func setProfile(image: UIImage) {
