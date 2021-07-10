@@ -13,7 +13,7 @@ final class BasicUserInfo: Identifiable {
 
     static let shared = BasicUserInfo()
 
-    typealias Dict = [String: Any?]
+    typealias Dict = [String: Any]
 
     struct Key {
         static let id = "id"
@@ -21,8 +21,10 @@ final class BasicUserInfo: Identifiable {
         static let profile = "profile"
     }
 
+    var isUserInfoEmpty: Bool { return userInfo == nil }
+
     var userInfo: Dict? {
-        if let info = UserDefaults.standard.dictionary(forKey: UserDefaultsKey.userInfo) {
+        if let info = UserDefaults.standard.object(forKey: UserDefaultsKey.userInfo) as? Dict {
             return info
         } else {
             return nil
@@ -48,8 +50,13 @@ final class BasicUserInfo: Identifiable {
 
     public func saveUserInfo() {
         let dict: Dict = [Key.id: userId,
-                          Key.name: username,
-                          Key.profile: profileImage]
+                          Key.name: username ?? "",
+                          Key.profile: profileUrl ?? ""]
         UserDefaults.standard.setValue(dict, forKey: UserDefaultsKey.userInfo)
+    }
+
+    public func getUserInfo() {
+        guard !isUserInfoEmpty else { return }
+
     }
 }

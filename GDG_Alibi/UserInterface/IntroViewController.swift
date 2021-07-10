@@ -35,7 +35,7 @@ final class IntroViewController: UIViewController, ViewInfo {
     private func showMainVC() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
 
-        if LocationManager.shared.isLocationEmpty {
+        if LocationManager.shared.isLocationEmpty || BasicUserInfo.shared.isUserInfoEmpty {
             let storyBoard = UIStoryboard(name: "Location", bundle: nil)
             guard let vc = storyBoard.instantiateInitialViewController() as? UINavigationController else { return }
             appDelegate.window?.rootViewController = vc

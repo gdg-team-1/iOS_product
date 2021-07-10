@@ -8,5 +8,12 @@
 import Foundation
 
 class ProfileViewModel {
-    
+
+    func registProfileImage() {
+        
+    }
+
+    func registUser() {
+
+    }
 }

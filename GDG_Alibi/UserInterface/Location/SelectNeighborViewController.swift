@@ -67,9 +67,9 @@ class SelectNeighborViewController: UIViewController {
     private func showNext() {
         if BasicUserInfo.shared.userInfo == nil {
             let storyboard = UIStoryboard(name: "MyPage", bundle: nil)
-            guard let vc = storyboard.instantiateInitialViewController() as? ProfileViewController else { return }
+            guard let vc = storyboard.instantiateViewController(withIdentifier: ProfileViewController.id) as? ProfileViewController else { return }
             vc.isInitProcess = true
-            self.present(vc, animated: true, completion: nil)
+            show(vc, sender: nil)
         } else {
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
             appDelegate.showHome()

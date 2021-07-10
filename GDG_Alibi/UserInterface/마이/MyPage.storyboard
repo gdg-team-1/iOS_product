@@ -50,7 +50,7 @@
                                         <color key="tintColor" name="395972"/>
                                         <color key="textColor" name="395972"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -107,7 +107,7 @@
         <!--마이-->
         <scene sceneID="Xii-uw-cmi">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V8J-fY-HdF" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="V8J-fY-HdF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="마이" image="bxUser" id="Hna-Yl-roz"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

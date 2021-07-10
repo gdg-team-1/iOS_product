@@ -9,12 +9,13 @@ import UIKit
 
 final class ProfileViewController: UIViewController {
 
-    static let id = "ProfileViewController'"
+    static let id = "ProfileViewController"
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var registImageButton: UIButton!
     @IBOutlet weak var nameContainerView: UIView!
     @IBOutlet weak var nameTextField: UITextField!
+    
     @IBOutlet weak var doneButton: UIBarButtonItem!
     @IBOutlet weak var backButton: UIBarButtonItem!
 
@@ -51,13 +52,15 @@ final class ProfileViewController: UIViewController {
         nameTextField.delegate = self
 
         navigationItem.leftBarButtonItem = isInitProcess ? backButton : nil
-        navigationItem.rightBarButtonItem = nil
+        navigationItem.rightBarButtonItem = isInitProcess ? doneButton : nil
 
         self.view.addGestureRecognizer(tapRecognizer)
     }
 
     private func initViewModel() {
+        if isInitProcess { return }
 
+        // TODO: 유저정보 셋팅
     }
 
     private func barButtonValidation() {
@@ -100,7 +103,7 @@ extension ProfileViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard !(textField.text?.isEmpty ?? true) else { return false }
         nameContainerView.layer.borderColor = disable.cgColor
-        navigationItem.rightBarButtonItem = nil
+        nameTextField.resignFirstResponder()
         return true
     }
 
