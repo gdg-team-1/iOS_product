@@ -234,12 +234,7 @@
 				B6E61865269354F2005FAC3D /* RequestInfo.swift */,
 				B650595526969FCD005B5F56 /* TableViewCell */,
 				B6E618672693583A005FAC3D /* CollectionViewCell */,
-				B69EA2B626971F3000CB3C2F /* EmptyView.swift */,
-				B69EA2B826971F3700CB3C2F /* EmptyView.xib */,
-				B69EA2BD2697274900CB3C2F /* LocationBarView.swift */,
-				B69EA2BF2697275300CB3C2F /* LocationBarView.xib */,
-				B69EA2C32697298500CB3C2F /* CheckBoxView.swift */,
-				B69EA2C52697298E00CB3C2F /* CheckBoxView.xib */,
+				B6B9A62A269A270D005EAFD7 /* CustomView */,
 			);
 			name = "홈";
 			path = "홈";
@@ -289,6 +284,19 @@
 				B6B9A61926994F40005EAFD7 /* UIButton+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		B6B9A62A269A270D005EAFD7 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				B69EA2B626971F3000CB3C2F /* EmptyView.swift */,
+				B69EA2B826971F3700CB3C2F /* EmptyView.xib */,
+				B69EA2BD2697274900CB3C2F /* LocationBarView.swift */,
+				B69EA2BF2697275300CB3C2F /* LocationBarView.xib */,
+				B69EA2C32697298500CB3C2F /* CheckBoxView.swift */,
+				B69EA2C52697298E00CB3C2F /* CheckBoxView.xib */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		B6C4623126933567007E28C8 = {
