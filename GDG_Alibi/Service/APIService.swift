@@ -20,7 +20,7 @@ enum TargetAPI {
     case getUserInfo(id: String)
     case submitUser(user: UserModel)
     case editUser(id: String, user: UserModel)
-    case profileUpload(data: Data, mimeType: String)
+    case profileUpload(data: UIImage)
 }
 
 extension TargetAPI: TargetType {
@@ -35,11 +35,10 @@ extension TargetAPI: TargetType {
         case .submitAlibi(_):                                       return "/api/v1/alibi"
         case .editAlibi(let id, _):                                 return "/api/v1/alibi/\(id)"
         case .deleteAlibi(let id):                                  return "/api/v1/alibi/\(id)"
-        case .getUserInfo(let id):
-            return "/api/v1/user/detail/\(id)"
+        case .getUserInfo(let id):                                  return "/api/v1/user/detail/\(id)"
         case .submitUser(_):                                        return "/api/v1/user"
         case .editUser(let id, _):                                  return "/api/v1/user/detail/\(id)"
-        case .profileUpload(_, _):                                     return "/api/v1/user/imageFileUpLoad"
+        case .profileUpload(_):                                  return "/api/v1/user/imageFileUpLoad"
         }
     }
 
@@ -47,7 +46,7 @@ extension TargetAPI: TargetType {
         switch self {
         case .getList, .getAlibi(_), .getMyList(_, _, _), .getUserInfo(_):
             return .get
-        case .submitAlibi, .submitUser(_), .profileUpload(_, _):
+        case .submitAlibi, .submitUser(_), .profileUpload(_):
             return .post
         case .editAlibi(_, _), .editUser(_, _):
             return .put
@@ -71,9 +70,11 @@ extension TargetAPI: TargetType {
         case .submitUser(let user), .editUser(_, let user):
             return .requestJSONEncodable(user)
 
-        case .profileUpload(let data, let mime):
-            let formData = MultipartFormData(provider: .data(data), name: "profile_img", fileName: "profile.jpeg", mimeType: mime)
-            return .uploadMultipart([formData])
+        case .profileUpload(let data):
+            let image = data.jpegData(compressionQuality: 0.20)
+            let attachmentImage = MultipartFormData(provider: .data(image!), name: "file", fileName: "image.jpg", mimeType: "image/jpeg")
+            let multipartData = [attachmentImage]
+            return .uploadMultipart(multipartData)
         }
     }
 
@@ -83,7 +84,7 @@ extension TargetAPI: TargetType {
 
     var headers: [String: String]? {
         switch self {
-        case .profileUpload(_, _):
+        case .profileUpload(_):
             let param = ["Content-Type": "multipart/form-data"]
             return param
 

@@ -40,21 +40,9 @@ final class ProfileViewModel {
     func registProfile() {
         guard let image = profileImage else { return }
 
-        var compressedData: Data = Data()
-        switch type {
-        case .JPG:
-            if let data = image.jpegData(compressionQuality: 1.0) {
-                compressedData = data
-            }
-        case .PNG:
-            if let data = image.pngData() {
-                compressedData = data
-            }
-        case .NONE:
-            self.delegate?.profileRegistDidFail("해당 파일은 올릴 수 없는 확장자입니다")
-        }
-
-        NetworkAdapter.request(target: TargetAPI.profileUpload(data: compressedData, mimeType: type.mime)) { response in
+        NetworkAdapter.request(target: TargetAPI.profileUpload(data: image)) { response in
+            let profileUrl = String(decoding: response.data, as: UTF8.self)
+            self.user?.profileUrl = profileUrl
         } error: { error in
             self.delegate?.profileRegistDidFail(error.localizedDescription)
         } failure: { failError in
