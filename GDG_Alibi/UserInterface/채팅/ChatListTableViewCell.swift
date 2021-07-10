@@ -17,8 +17,10 @@ class ChatListTableViewCell: UITableViewCell {
     
     
     func bind(data: ChatListModel) {
-        self.titleLabel.text = data.title
+        self.profileImageView.layer.cornerRadius = 52 / 2
+        
+        self.titleLabel.text = data.helpUser
         self.dateLabel.text = data.date.monthDay()
-        self.subLabel.text = data.sub
+        self.subLabel.text = data.category
     }
 }

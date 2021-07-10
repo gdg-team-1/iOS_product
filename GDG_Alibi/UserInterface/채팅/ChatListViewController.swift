@@ -52,7 +52,7 @@ class ChatListViewController: UIViewController {
     @IBAction func helpLongTouch(_ sender: UILongPressGestureRecognizer) {
         let alertVC = UIAlertController(title: "임시", message: "임시 유저 아이디", preferredStyle: .actionSheet)
         
-        ["user1", "user2", "user3", "user4", "user5"].forEach { user in
+        ["업쓰", "아이린", "헐크"].forEach { user in
             let action = UIAlertAction(title: user, style: .default) { _ in
                 UserDefaults.standard.setValue(user, forKey: "userID")
             }
