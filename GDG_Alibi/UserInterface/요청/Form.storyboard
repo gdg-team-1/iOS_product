@@ -233,7 +233,7 @@
         <scene sceneID="c9f-Fp-TIE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KWv-Th-59f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="요청" image="bxsPlusSquare" id="msT-BP-iAr"/>
+                    <tabBarItem key="tabBarItem" title="요청" image="bxsPlusSquare4" id="msT-BP-iAr"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1xZ-C3-blJ">
@@ -290,7 +290,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bxsPlusSquare" width="18" height="18"/>
+        <image name="bxsPlusSquare4" width="18" height="18"/>
         <image name="icClose" width="20" height="20"/>
         <image name="icFormChevronDown" width="11" height="7"/>
         <namedColor name="395972">

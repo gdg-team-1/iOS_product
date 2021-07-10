@@ -153,8 +153,8 @@ extension HomeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RequestTableViewCell.id, for: indexPath) as? RequestTableViewCell else { return UITableViewCell() }
-        cell.touchButton = {
-
+        cell.touchButton = { [weak self] in
+            self?.tabBarController?.selectedIndex = 3
         }
         cell.model = viewModel.list[indexPath.row]
         return cell

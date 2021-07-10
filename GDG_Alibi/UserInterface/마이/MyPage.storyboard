@@ -108,7 +108,7 @@
         <scene sceneID="Xii-uw-cmi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="V8J-fY-HdF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="마이" image="bxUser" id="Hna-Yl-roz"/>
+                    <tabBarItem key="tabBarItem" title="마이" image="bxUser3" id="Hna-Yl-roz"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zAh-Py-hcm">
@@ -128,7 +128,7 @@
     </scenes>
     <resources>
         <image name="bxPencil" width="19" height="19"/>
-        <image name="bxUser" width="18" height="19"/>
+        <image name="bxUser3" width="18" height="19"/>
         <image name="icBack" width="16" height="13"/>
         <image name="profilePlaceholder" width="240" height="239"/>
         <namedColor name="395972">

@@ -31,12 +31,13 @@ final class HomeViewModel {
     func requestList(_ date: Date) {
         list.removeAll()
 
-        let userid = ""
-        let dueDate = dateFormatter.string(from: date)
-        let location = LocationManager.shared.locationString
-        NetworkAdapter.request(target: TargetAPI.getMyList(user: userid,
-                                                           dueDate: dueDate,
-                                                           location: location)) { response in
+//        let userid = ""
+//        let dueDate = dateFormatter.string(from: date)
+//        let location = LocationManager.shared.locationString
+//        NetworkAdapter.request(target: TargetAPI.getMyList(user: userid,
+//                                                           dueDate: dueDate,
+//                                                           location: location)) { response in
+        NetworkAdapter.request(target: TargetAPI.getList) { response in
             do {
                 let list = try JSONDecoder().decode([RequestInfo].self, from: response.data)
                 self.list.append(contentsOf: list)

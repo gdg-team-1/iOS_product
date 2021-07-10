@@ -10,7 +10,7 @@ import Foundation
 struct RequestInfo: Identifiable, Decodable {
     var id: Int
     var category: [String]
-    var dday: String
+    var dday: String?
     var location: String
-    var requestUser: String
+    var requestUser: String?
 }

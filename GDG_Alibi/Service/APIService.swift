@@ -26,8 +26,7 @@ extension TargetAPI: TargetType {
         switch self {
         case .getList:                                              return "/api/v1/alibi"
         case .getAlibi(let id):                                     return "/api/v1/alibi/\(id)"
-        case .getMyList(let user, let dueDate, let location):
-            return "/api/v1/alibi/search?dDay=\(dueDate)&location=\(location)&requestUser=\(user)"
+        case .getMyList(_, _, _):                                   return "/api/v1/alibi/search"
         case .submitAlibi(_):                                       return "/api/v1/alibi"
         case .editAlibi(let id, _):                                 return "/api/v1/alibi/\(id)"
         case .deleteAlibi(let id):                                  return "/api/v1/alibi/\(id)"
@@ -49,8 +48,12 @@ extension TargetAPI: TargetType {
 
     var task: Task {
         switch self {
-        case .getList, .getAlibi(_), .getMyList(_), .deleteAlibi(_):
+        case .getList, .getAlibi(_), .deleteAlibi(_):
             return .requestPlain
+
+        case .getMyList(let user, let dueDate, let location):
+            let param: [String: Any] = ["requestUser": user, "dDay": dueDate, "location": location]
+            return .requestParameters(parameters: param, encoding: URLEncoding.default)
 
         case .submitAlibi(let form), .editAlibi(_, let form):
             return .requestJSONEncodable(form)
