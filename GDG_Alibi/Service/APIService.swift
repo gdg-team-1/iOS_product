@@ -17,9 +17,10 @@ enum TargetAPI {
     case editAlibi(id: String, form: FormModel)
     case deleteAlibi(id: String)
 
+    case getUserInfo(id: String)
     case submitUser(user: UserModel)
     case editUser(id: String, user: UserModel)
-    case profileUpload(image: UIImage)
+    case profileUpload(data: Data, mimeType: String)
 }
 
 extension TargetAPI: TargetType {
@@ -34,17 +35,19 @@ extension TargetAPI: TargetType {
         case .submitAlibi(_):                                       return "/api/v1/alibi"
         case .editAlibi(let id, _):                                 return "/api/v1/alibi/\(id)"
         case .deleteAlibi(let id):                                  return "/api/v1/alibi/\(id)"
+        case .getUserInfo(let id):
+            return "/api/v1/user/detail/\(id)"
         case .submitUser(_):                                        return "/api/v1/user"
         case .editUser(let id, _):                                  return "/api/v1/user/detail/\(id)"
-        case .profileUpload(_):                                     return "/api/v1/user/imageFileUpLoad"
+        case .profileUpload(_, _):                                     return "/api/v1/user/imageFileUpLoad"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .getList, .getAlibi(_), .getMyList(_, _, _):
+        case .getList, .getAlibi(_), .getMyList(_, _, _), .getUserInfo(_):
             return .get
-        case .submitAlibi, .submitUser(_), .profileUpload(_):
+        case .submitAlibi, .submitUser(_), .profileUpload(_, _):
             return .post
         case .editAlibi(_, _), .editUser(_, _):
             return .put
@@ -55,7 +58,7 @@ extension TargetAPI: TargetType {
 
     var task: Task {
         switch self {
-        case .getList, .getAlibi(_), .deleteAlibi(_):
+        case .getList, .getAlibi(_), .deleteAlibi(_), .getUserInfo(_):
             return .requestPlain
 
         case .getMyList(let user, let dueDate, let location):
@@ -68,9 +71,8 @@ extension TargetAPI: TargetType {
         case .submitUser(let user), .editUser(_, let user):
             return .requestJSONEncodable(user)
 
-        case .profileUpload(let image):
-            let imageData = image.jpegData(compressionQuality: 1.0)
-            let formData = MultipartFormData(provider: .data(imageData!), name: "profile_img")
+        case .profileUpload(let data, let mime):
+            let formData = MultipartFormData(provider: .data(data), name: "profile_img", fileName: "profile.jpeg", mimeType: mime)
             return .uploadMultipart([formData])
         }
     }
@@ -80,8 +82,15 @@ extension TargetAPI: TargetType {
     }
 
     var headers: [String: String]? {
-        let param = ["content-type": "application/json",
-                     "charset": "request = UTF-8, response = UTF-8"]
-        return param
+        switch self {
+        case .profileUpload(_, _):
+            let param = ["Content-Type": "multipart/form-data"]
+            return param
+
+        default:
+            let param = ["Content-Type": "application/json",
+                         "charset": "request = UTF-8, response = UTF-8"]
+            return param
+        }
     }
 }
