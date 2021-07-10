@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F10B34C2695DE9A00E7006B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F10B34B2695DE9A00E7006B /* GoogleService-Info.plist */; };
 		4F10B34E2695E0A800E7006B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F10B34D2695E0A800E7006B /* ChatViewController.swift */; };
 		4F10B3502695E0B600E7006B /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F10B34F2695E0B600E7006B /* ChatListViewController.swift */; };
 		4F10B3522695E34C00E7006B /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F10B3512695E34C00E7006B /* ChatListTableViewCell.swift */; };
@@ -38,8 +37,6 @@
 		B69EA2D32697507500CB3C2F /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EA2D22697507500CB3C2F /* FormViewModel.swift */; };
 		B69EA2D52697528C00CB3C2F /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EA2D42697528C00CB3C2F /* StationViewController.swift */; };
 		B6B6024E269348BE005E5E34 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B6024D269348BE005E5E34 /* Home.storyboard */; };
-		B6B9A623269970D4005EAFD7 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A622269970D4005EAFD7 /* CategoryView.swift */; };
-		B6B9A625269970E4005EAFD7 /* CategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B9A624269970E4005EAFD7 /* CategoryView.xib */; };
 		B6B9A5FE269882B1005EAFD7 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B9A5FD269882B1005EAFD7 /* Location.storyboard */; };
 		B6B9A60026988348005EAFD7 /* SelectCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A5FF26988348005EAFD7 /* SelectCityViewController.swift */; };
 		B6B9A6032698840E005EAFD7 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A6012698840E005EAFD7 /* LocationTableViewCell.swift */; };
@@ -56,6 +53,9 @@
 		B6B9A61C26995F6B005EAFD7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A61B26995F6B005EAFD7 /* ProfileViewController.swift */; };
 		B6B9A61E26996429005EAFD7 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A61D26996429005EAFD7 /* ProfileViewModel.swift */; };
 		B6B9A62026996514005EAFD7 /* BasicUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A61F26996514005EAFD7 /* BasicUserInfo.swift */; };
+		B6B9A623269970D4005EAFD7 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A622269970D4005EAFD7 /* CategoryView.swift */; };
+		B6B9A625269970E4005EAFD7 /* CategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B9A624269970E4005EAFD7 /* CategoryView.xib */; };
+		B6B9A62726999080005EAFD7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6B9A62626999080005EAFD7 /* GoogleService-Info.plist */; };
 		B6C4623E26933567007E28C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C4623D26933567007E28C8 /* AppDelegate.swift */; };
 		B6C4624726933568007E28C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6C4624626933568007E28C8 /* Assets.xcassets */; };
 		B6C4624A26933568007E28C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6C4624826933568007E28C8 /* LaunchScreen.storyboard */; };
@@ -73,7 +73,6 @@
 
 /* Begin PBXFileReference section */
 		0A24FD1B15524829F0F9E31D /* Pods-GDG_Alibi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDG_Alibi.release.xcconfig"; path = "Target Support Files/Pods-GDG_Alibi/Pods-GDG_Alibi.release.xcconfig"; sourceTree = "<group>"; };
-		4F10B34B2695DE9A00E7006B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F10B34D2695E0A800E7006B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		4F10B34F2695E0B600E7006B /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		4F10B3512695E34C00E7006B /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
@@ -104,8 +103,6 @@
 		B69EA2D22697507500CB3C2F /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
 		B69EA2D42697528C00CB3C2F /* StationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
 		B6B6024D269348BE005E5E34 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		B6B9A622269970D4005EAFD7 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
-		B6B9A624269970E4005EAFD7 /* CategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryView.xib; sourceTree = "<group>"; };
 		B6B9A5FD269882B1005EAFD7 /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
 		B6B9A5FF26988348005EAFD7 /* SelectCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityViewController.swift; sourceTree = "<group>"; };
 		B6B9A6012698840E005EAFD7 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
@@ -122,6 +119,9 @@
 		B6B9A61B26995F6B005EAFD7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B6B9A61D26996429005EAFD7 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		B6B9A61F26996514005EAFD7 /* BasicUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicUserInfo.swift; sourceTree = "<group>"; };
+		B6B9A622269970D4005EAFD7 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		B6B9A624269970E4005EAFD7 /* CategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryView.xib; sourceTree = "<group>"; };
+		B6B9A62626999080005EAFD7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B6C4623A26933567007E28C8 /* GDG_Alibi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDG_Alibi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6C4623D26933567007E28C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6C4624626933568007E28C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -208,8 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				B6B9A60F26993F3B005EAFD7 /* korea.json */,
-				4F10B34B2695DE9A00E7006B /* GoogleService-Info.plist */,
 				B6C4624826933568007E28C8 /* LaunchScreen.storyboard */,
+				B6B9A62626999080005EAFD7 /* GoogleService-Info.plist */,
 				B6C4624B26933568007E28C8 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -465,12 +465,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6B9A5FE269882B1005EAFD7 /* Location.storyboard in Resources */,
+				B6B9A62726999080005EAFD7 /* GoogleService-Info.plist in Resources */,
 				B6B9A61026993F3B005EAFD7 /* korea.json in Resources */,
 				B6E6185D2693529A005FAC3D /* Chat.storyboard in Resources */,
 				B69EA2C02697275300CB3C2F /* LocationBarView.xib in Resources */,
 				B69EA2CA2697310000CB3C2F /* MonthCollectionReusableView.xib in Resources */,
 				B6C4624A26933568007E28C8 /* LaunchScreen.storyboard in Resources */,
-				4F10B34C2695DE9A00E7006B /* GoogleService-Info.plist in Resources */,
 				B6B9A6042698840E005EAFD7 /* LocationTableViewCell.xib in Resources */,
 				B6C4624726933568007E28C8 /* Assets.xcassets in Resources */,
 				B6E6185F269352C8005FAC3D /* MyPage.storyboard in Resources */,
@@ -717,6 +717,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 88356WAKJ6;
 				INFOPLIST_FILE = GDG_Alibi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -724,7 +725,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alibi.GDG-Alibi";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alibaba.gdg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -738,6 +739,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 88356WAKJ6;
 				INFOPLIST_FILE = GDG_Alibi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -745,7 +747,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alibi.GDG-Alibi";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alibaba.gdg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>431043145883-i9dcsm6kasficfnv9e48o9oav1pnmf4v.apps.googleusercontent.com</string>
+	<string>431043145883-0aats5er8n3pog5blc9ihksmuvcos8mq.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.431043145883-i9dcsm6kasficfnv9e48o9oav1pnmf4v</string>
+	<string>com.googleusercontent.apps.431043145883-0aats5er8n3pog5blc9ihksmuvcos8mq</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBnDWYNbSDjeBPzVNKVb_X2OlwcXsQ5gAU</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.alibi.GDG-Alibi</string>
+	<string>com.alibaba.gdg</string>
 	<key>PROJECT_ID</key>
 	<string>gdgalibi</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:431043145883:ios:27e51bd1c0e42d267c563e</string>
+	<string>1:431043145883:ios:db0c337638656a307c563e</string>
 </dict>
 </plist>
