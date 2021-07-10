@@ -19,6 +19,13 @@ final class ProfileViewController: UIViewController {
     @IBOutlet weak var doneButton: UIBarButtonItem!
     @IBOutlet weak var backButton: UIBarButtonItem!
 
+    lazy var imagePicker: UIImagePickerController = {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.allowsEditing = true
+        return vc
+    }()
+
     var isInitProcess: Bool = false
 
     let disable: UIColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
@@ -29,7 +36,7 @@ final class ProfileViewController: UIViewController {
     }()
 
     lazy var viewModel: ProfileViewModel = {
-        return ProfileViewModel()
+        return ProfileViewModel(delegate: self)
     }()
 
     override func viewDidLoad() {
@@ -55,6 +62,8 @@ final class ProfileViewController: UIViewController {
         navigationItem.rightBarButtonItem = isInitProcess ? doneButton : nil
 
         self.view.addGestureRecognizer(tapRecognizer)
+
+        imagePicker.delegate = self
     }
 
     private func initViewModel() {
@@ -69,7 +78,7 @@ final class ProfileViewController: UIViewController {
 
     @IBAction func touchRegistImage(_ sender: Any) {
         touchFeedback()
-        // TODO: - barbutton validation 추가
+        present(imagePicker, animated: true, completion: nil)
     }
 
     @IBAction func touchBack(_ sender: Any) {
@@ -77,12 +86,7 @@ final class ProfileViewController: UIViewController {
     }
 
     @IBAction func touchDone(_ sender: Any) {
-        BasicUserInfo.shared.saveUserInfo()
-
-        if isInitProcess {
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-            appDelegate.showHome()
-        }
+        viewModel.submitUser()
 
         navigationItem.rightBarButtonItem = nil
         nameTextField.resignFirstResponder()
@@ -90,6 +94,24 @@ final class ProfileViewController: UIViewController {
 
     @objc func handleTap() {
         nameTextField.resignFirstResponder()
+    }
+}
+
+extension ProfileViewController: ProfileRegisterDelegate {
+    func profileRegistDidSuccess() {
+        BasicUserInfo.shared.saveUserInfo()
+
+        if isInitProcess {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+            appDelegate.showHome()
+        }
+    }
+
+    func profileRegistDidFail(_ message: String) {
+        let alert = UIAlertController(title: "알림", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -110,5 +132,19 @@ extension ProfileViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         nameContainerView.layer.borderColor = disable.cgColor
         barButtonValidation()
+    }
+}
+
+extension ProfileViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            profileImageView.image = image
+        }
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        imagePicker.dismiss(animated: true, completion: nil)
     }
 }
