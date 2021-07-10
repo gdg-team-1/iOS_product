@@ -18,6 +18,12 @@ final class RequestTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var helpButton: UIButton!
 
+    lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = DateUtil.receive
+        return formatter
+    }()
+
     var touchButton: (() -> Void)?
 
     var model: RequestInfo? {
@@ -25,7 +31,7 @@ final class RequestTableViewCell: UITableViewCell {
 //            profileImageview.image = model?.profile
             categoryLabel.text = model?.category.first
             usernameLabel.text = model?.requestUser
-            timeLabel.text = model?.dday
+            timeLabel.text = calculateDateInterval(model?.dday)
         }
     }
 
@@ -34,6 +40,24 @@ final class RequestTableViewCell: UITableViewCell {
 
         profileImageview.layer.cornerRadius = profileImageview.bounds.width/2
         helpButton.layer.cornerRadius = 4
+    }
+
+    private func calculateDateInterval(_ dday: String?) -> String? {
+        guard let dday = dday, let dueDate = dateFormatter.date(from: dday) else { return nil }
+        let today = Date()
+        let calendar = Calendar.current
+        let unit: Set<Calendar.Component> = [.day, .hour, .minute]
+        let components = calendar.dateComponents(unit, from: today, to: dueDate)
+
+        var result: String = ""
+        if let day = components.day, day > 0 {
+            result += "\(day)일 내 필요"
+            return result
+        }
+        if let hour = components.hour, hour > 0 { result += "\(hour)시간" }
+        if let minute = components.minute, minute > 0 { result += "\(minute)분 " }
+        if !result.isEmpty { result += "내 필요" }
+        return result
     }
 
     @IBAction func touchButton(_ sender: Any) {

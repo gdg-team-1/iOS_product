@@ -40,10 +40,10 @@ final class DueDateTableViewCell: UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier:"ko_KR")
 
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        dateFormatter.dateFormat = DateUtil.receive
         model?.dday = dateFormatter.string(from: Date())
 
-        dateFormatter.dateFormat = "MM월 dd일 E요일 a hh시 mm분"
+        dateFormatter.dateFormat = DateUtil.form
         dateLabel.text = dateFormatter.string(from: Date())
     }
 
@@ -65,11 +65,11 @@ final class DueDateTableViewCell: UITableViewCell {
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier:"ko_KR")
 
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        dateFormatter.dateFormat = DateUtil.receive
         let selectedDate: String = dateFormatter.string(from: sender.date)
         model?.dday = selectedDate
 
-        dateFormatter.dateFormat = "MM월 dd일 E요일 a hh시 mm분"
+        dateFormatter.dateFormat = DateUtil.form
         let today = dateFormatter.string(from: sender.date)
         dateLabel.text = today
 

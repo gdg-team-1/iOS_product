@@ -74,7 +74,7 @@ class HomeViewController: UIViewController {
         guard let dateString = notification.object as? String else { return }
 
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        formatter.dateFormat = DateUtil.receive
         
         if let date = formatter.date(from: dateString) {
             monthView.selectDates([date])
@@ -99,7 +99,7 @@ extension HomeViewController: HomeViewRequestDelegate {
 
 extension HomeViewController: JTACMonthViewDataSource {
     func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
-        formatter.dateFormat = "yyyy MM dd"
+        formatter.dateFormat = DateUtil.main
         let startDate = formatter.date(from: formatter.string(for: Date())!)!
         let endDate = formatter.date(from: "2022 12 31")!
         return ConfigurationParameters(startDate: startDate, endDate: endDate)
