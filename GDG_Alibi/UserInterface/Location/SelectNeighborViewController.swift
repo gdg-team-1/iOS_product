@@ -60,9 +60,20 @@ class SelectNeighborViewController: UIViewController {
         touchFeedback()
 
         LocationManager.shared.saveLocationInfo()
-        
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        appDelegate.showHome()
+
+        showNext()
+    }
+
+    private func showNext() {
+        if BasicUserInfo.shared.userInfo == nil {
+            let storyboard = UIStoryboard(name: "MyPage", bundle: nil)
+            guard let vc = storyboard.instantiateInitialViewController() as? ProfileViewController else { return }
+            vc.isInitProcess = true
+            self.present(vc, animated: true, completion: nil)
+        } else {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+            appDelegate.showHome()
+        }
     }
 }
 

@@ -9,4 +9,5 @@ import Foundation
 
 struct UserDefaultsKey {
     static let myLocation = "my_location"
+    static let userInfo = "user_info"
 }
