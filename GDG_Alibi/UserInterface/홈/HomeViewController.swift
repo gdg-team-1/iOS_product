@@ -153,8 +153,18 @@ extension HomeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RequestTableViewCell.id, for: indexPath) as? RequestTableViewCell else { return UITableViewCell() }
-        cell.touchButton = { [weak self] in
-            self?.tabBarController?.selectedIndex = 3
+        cell.touchButton = { [weak self] helpUserId, category in
+            guard let userId = BasicUserInfo.shared.user.id,
+                  let helpUserId = helpUserId, let category = category else { return }
+            FirebaseUtil.addChat(requestUser: userId, helpUser: helpUserId, category: category) { error in
+                switch error {
+                case .some(let error):
+                    print("\n---------------------- [ \(error.localizedDescription) ] ----------------------")
+                case .none:
+                    self?.tabBarController?.selectedIndex = 3
+                    break
+                }
+            }
         }
         cell.model = viewModel.list[indexPath.row]
         return cell

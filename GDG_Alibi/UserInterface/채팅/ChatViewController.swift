@@ -97,7 +97,7 @@ extension ChatViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let userID = UserDefaults.standard.string(forKey: "userID")!
+        let userID = UserDefaults.standard.string(forKey: UserDefaultsKey.id)!
         let chat = self.viewModel.chatData[indexPath.row]
         
         let cell: ChatMessageTableViewCell
