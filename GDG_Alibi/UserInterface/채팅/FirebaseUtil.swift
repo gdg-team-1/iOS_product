@@ -12,7 +12,7 @@ class FirebaseUtil {
     
     static var photos = [String: UIImage]()
     
-    class func imageUpload(image: UIImage, completion: @escaping (String?) -> ()) {
+    class func imageUpload(image: UIImage, completion: @escaping (String?) -> Void) {
         
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
@@ -41,7 +41,7 @@ class FirebaseUtil {
     
     
     
-    class func imageDownload(imageURL: String, completion: @escaping (UIImage?) -> ()) {
+    class func imageDownload(imageURL: String, completion: @escaping (UIImage?) -> Void) {
         
         if let image = self.photos[imageURL] {
             completion(image)
@@ -70,7 +70,7 @@ class FirebaseUtil {
     
     
     
-    class func imageDownload(userID: String, completion: @escaping (UIImage?) -> ()) {
+    class func imageDownload(userID: String, completion: @escaping (UIImage?) -> Void) {
         
         if let image = self.photos[userID] {
             completion(image)
@@ -96,5 +96,20 @@ class FirebaseUtil {
                     }
                 }
         }
+    }
+    
+    
+    class func addChat(requestUser: String, helpUser: String, category: String, completion: @escaping (Error?) -> Void) {
+        let data: [String: Any] = ["requestUser": requestUser,
+                                   "helpUser": helpUser,
+                                   "category": category,
+                                   "date": Date()]
+        
+        Firestore
+            .firestore()
+            .collection("chatList")
+            .addDocument(data: data) { error in
+                completion(error)
+            }
     }
 }

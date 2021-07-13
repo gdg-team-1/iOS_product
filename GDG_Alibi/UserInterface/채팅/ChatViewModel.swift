@@ -50,7 +50,6 @@ class ChatViewModel {
                 if let error = error {
                     print("\n---------------------- [ \(error.localizedDescription) ] ----------------------")
                     
-                    
                 } else {
                     guard let self = self, let documents = snapshot?.documents else { return }
                     
@@ -80,5 +79,10 @@ class ChatViewModel {
             .document(self.documentID)
             .collection("message")
             .addDocument(data: chat.toDictionary())
+        
+        self.firestore
+            .collection("chatList")
+            .document(self.documentID)
+            .updateData(["lastMessage": chat.message])
     }
 }

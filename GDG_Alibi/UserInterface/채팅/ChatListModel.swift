@@ -15,6 +15,7 @@ struct ChatListModel {
     let helpUser: String
     let category: String
     let date: Date
+    let lastMessage: String?
     
     
     
@@ -27,5 +28,6 @@ struct ChatListModel {
         self.category = data["category"] as? String ?? ""
         let tempDate = data["date"] as? Timestamp ?? Timestamp()
         self.date = tempDate.dateValue()
+        self.lastMessage = data["lastMessage"] as? String
     }
 }

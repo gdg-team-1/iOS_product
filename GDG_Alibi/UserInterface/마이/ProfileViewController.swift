@@ -75,8 +75,18 @@ final class ProfileViewController: UIViewController {
     }
 
     @IBAction func touchRegistImage(_ sender: Any) {
-        touchFeedback()
-        present(imagePicker, animated: true, completion: nil)
+        FirebaseUtil.addChat(requestUser: "업쓰", helpUser: "하하하", category: "사진사진") { error in
+            switch error {
+            case .some(let error):
+                print("\n---------------------- [ \(error.localizedDescription) ] ----------------------")
+                
+            case .none:
+                // 채팅 화면으로 고고
+                break
+            }
+        }
+//        touchFeedback()
+//        present(imagePicker, animated: true, completion: nil)
     }
 
     @IBAction func touchBack(_ sender: Any) {

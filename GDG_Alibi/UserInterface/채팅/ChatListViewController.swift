@@ -27,17 +27,41 @@ class ChatListViewController: UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.newChat()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
         guard
             let dest = segue.destination as? ChatViewController,
-            let index = sender as? IndexPath
+            let documentID = sender as? String
         else { return }
         
-        let documentID = self.viewModel.chatListData[index.row].chatDocumentID
         dest.viewModel = ChatViewModel(documentID: documentID)
     }
+    
+    
+    
+    // MARK: - Interface
+    
+    private func newChat() {
+        let new = self.viewModel.chatListData
+            .filter { $0.lastMessage == nil }
+            .first
+        
+        guard let documentID = new?.chatDocumentID else { return }
+        
+        self.performSegue(withIdentifier: "chat", sender: documentID)
+    }
+    
+    
+    
+    
+    
     
     @IBAction func repuestDidTap(_ sender: UIButton) {
         
@@ -50,19 +74,8 @@ class ChatListViewController: UIViewController {
     }
     
     @IBAction func helpLongTouch(_ sender: UILongPressGestureRecognizer) {
-        let alertVC = UIAlertController(title: "임시", message: "임시 유저 아이디", preferredStyle: .actionSheet)
         
-        ["업쓰", "아이린", "헐크"].forEach { user in
-            let action = UIAlertAction(title: user, style: .default) { _ in
-                UserDefaults.standard.setValue(user, forKey: "userID")
-            }
-            alertVC.addAction(action)
-        }
         
-        let cancel = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
-        alertVC.addAction(cancel)
-        
-        self.present(alertVC, animated: true)
     }
 }
 
@@ -92,6 +105,7 @@ extension ChatListViewController: UITableViewDataSource {
 extension ChatListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "chat", sender: indexPath)
+        let documentID = self.viewModel.chatListData[indexPath.row].chatDocumentID
+        self.performSegue(withIdentifier: "chat", sender: documentID)
     }
 }
